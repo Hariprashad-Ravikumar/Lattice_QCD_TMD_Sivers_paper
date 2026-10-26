@@ -37,12 +37,12 @@ The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_
         \label{fig:v_path_P-1}
 \end{figure}
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{figures/eta_gauge_links_forP-1_table.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/eta_gauge_links_forP-1_table.pdf}
         \caption{Discrete gauge link configurations defining the interpolation bounds for $P_1 = -1$. Empty brackets $\{\}$ denote a zero-length origin link, while numerical arrays (e.g., $\{1,3,1\}$) give the sequence of directional steps.}
         \label{tab:eta_table_P-1}
-\end{table}
+\end{table*}
 
 
 % ---------------------------------------------------------
@@ -55,12 +55,12 @@ The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_
         \label{fig:v_path_P-2}
 \end{figure}
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{figures/eta_gauge_links_forP-2_table.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/eta_gauge_links_forP-2_table.pdf}
         \caption{Discrete gauge link configurations defining the interpolation bounds for $P_1 = -2$.}
         \label{tab:eta_table_P-2}
-\end{table}
+\end{table*}
 
 
 % ---------------------------------------------------------
@@ -73,12 +73,12 @@ The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_
         \label{fig:v_path_P-3}
 \end{figure}
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{figures/eta_gauge_links_forP-3_table.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/eta_gauge_links_forP-3_table.pdf}
         \caption{Discrete gauge link configurations defining the interpolation bounds for $P_1 = -3$.}
         \label{tab:eta_table_P-3}
-\end{table}
+\end{table*}
 
 
 % ---------------------------------------------------------
@@ -91,38 +91,38 @@ The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_
         \label{fig:v_path_P-4}
 \end{figure}
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=1\linewidth]{figures/eta_gauge_links_forP-4_table.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/eta_gauge_links_forP-4_table.pdf}
         \caption{Discrete gauge link configurations defining the interpolation bounds for $P_1 = -4$.}
         \label{tab:eta_table_P-4}
-\end{table}
+\end{table*}
 
 \subsection{Paths for the quark separation \texorpdfstring{$\vect{b}$}{b}}
 \label{sec:b_gauge_links}
 Constructing the direct Wilson line connecting the quark fields at $0$ and $\vect{b}$ requires generating step-wise paths across the lattice. We categorize these paths into purely transverse separations ($b_1 = 0$) and off-axis separations with a longitudinal component ($b_1 \neq 0$). For purely transverse separations, where $b \cdot P = 0$, the gauge links lie entirely within the transverse plane. Table \ref{tab:b_table_transverse} lists the link sequences used to reach these target coordinates. An empty bracket $\{\}$ denotes the local origin, while arrays such as $\{2,2\}$ indicate a sequence of two consecutive links in the $\hat{x_{2}}$-direction.
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=0.6\linewidth,height=0.65\textheight,keepaspectratio]{figures/b_gauge_links_for_table1.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/b_gauge_links_for_table1.pdf}
     \caption{Discrete gauge link configurations for purely transverse quark separations ($\vect{b} = \{0, b_2, 0\}$). The numerical arrays show the sequential lattice steps (e.g., `2` represents a shift in the $x_2$ direction). Our lattice size is $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and the lattice spacing is $a=0.11403\text{ fm}$.}
     \label{tab:b_table_transverse}
-\end{table}
+\end{table*}
 
 To access finite $b \cdot P$, we construct off-axis paths with simultaneous steps in the longitudinal ($\hat{x_{1}}$) and transverse ($\hat{x_{2}}$) directions. To preserve the symmetry required for isolating parity states, every path that reaches a $+b_1$ coordinate has an exact mirror path reaching $-b_1$. Tables \ref{tab:b_table_pos_b1}-\ref{tab:b_table_neg_b1} show these mirrored sequences side by side. Sequences such as $\{2,1\}$ indicate an alternating ``staircase'' step: one unit in the $\hat{x_{2}}$-direction followed by one unit in the $\hat{x_{1}}$-direction. 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=0.6\linewidth,height=0.65\textheight,keepaspectratio]{figures/b_gauge_links_for_table2.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/b_gauge_links_for_table2.pdf}
         \caption{Gauge link sequences for $+b_1$ (positive longitudinal separation). Symmetric sets of step-wise gauge link paths required to access finite $\pm b \cdot P$ and isolate the real and imaginary components of the invariant amplitudes. Our lattice size is $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and the lattice spacing is $a=0.11403\text{ fm}$.}
         \label{tab:b_table_pos_b1}
-\end{table}
+\end{table*}
 
-\begin{table}[htpb]
+\begin{table*}[htbp]
     \centering
-    \includegraphics[width=0.6\linewidth,height=0.65\textheight,keepaspectratio]{figures/b_gauge_links_for_table3.pdf}
+    \includegraphics[width=0.8\textwidth,height=0.45\textheight,keepaspectratio]{figures/b_gauge_links_for_table3.pdf}
         \caption{Mirrored gauge link sequences for $-b_1$ (negative longitudinal separation).Symmetric sets of step-wise gauge link paths required to access finite $\pm b \cdot P$ and isolate the real and imaginary components of the invariant amplitudes. Our lattice size is $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and the lattice spacing is $a=0.11403\text{ fm}$.}
         \label{tab:b_table_neg_b1}
-\end{table}
+\end{table*}
 \subsubsection{Symmetry Improving Operation (Path Averaging) for $\vect{b}$}
 \label{sec:b_path_averaging}
 
@@ -143,6 +143,7 @@ Applying this symmetry-improving operation (path-averaging) strategy across the 
     \label{fig:b_full_network}
 \end{figure}
 
+\begin{widetext}
 \section{Solving for the amplitudes}
 \label{app:solve}
 To extract the physical Sivers shift from the lattice, we must isolate the specific invariant amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ from the raw correlator data. We start from the parametrization of the unsubtracted correlator in Eq.~\eqref{eq-phitildedecomp}~\cite{Musch:2011er}. While this parametrization describes a continuous gauge link extending to infinity, we adopt an equivalent representation for lattice calculations in which the structures depend explicitly on the finite staple extent $\eta$. This form remains well defined even in the $v \cdot P = 0$ limit. We obtain it by making the substitution $v \rightarrow \eta v$ and extracting the scaling factors $(v \tcdot P)^{-n}$ as discussed in Appendix~\ref{app:symmetries}:
@@ -406,3 +407,4 @@ Finally, we convert these finite-link evaluations ($\tilde a_i, \tilde b_i$) bac
 	\tAmp_i & = \tilde a_i \\
 	 \tBmp_i & = (\eta v \tcdot P)^n\ \tilde b_i
 \end{align}
+\end{widetext}
