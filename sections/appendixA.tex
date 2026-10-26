@@ -1,0 +1,146 @@
+\section{Symmetry constraints and amplitude parametrization}
+\label{app:symmetries}
+\subsection{Symmetry constraints}
+Discrete symmetries constrain the correlation function. Consider the unsubtracted correlator~\cite{Boer:2011xd}:
+\begin{align}
+  \Phi^{[\GammaOp]}_{\text{unsub}} (\kei,P,S;v,\mu) & = \int \frac{d^4 \elll}{(2\pi)^4} \ 
+  e^{i\kei \cdot \elll} 
+  \underbrace{ \frac{1}{2} \bra{\nucl{P,S}}\ \bar \quark(0)\ \overbrace{ \mathcal{U}[0,\infty v]\ \mathcal{U}[\infty v,\elll] }^{\displaystyle \U} \GammaOp\ \quark(\elll)\ \ket{\nucl{P,S}} }_{\displaystyle \widetilde \Phi^{[\GammaOp]}_{\text{unsub}}(\elll,P,S;v,\mu) }\ .
+  \label{eq-corrunmod}
+\end{align}
+For unpolarized quarks ($\Gamma = \gamma^\mu$), its decomposition into real-valued Lorentz-invariant amplitudes reads
+\begin{align}
+\frac{1}{2} \Phi^{[\gamma^\mu]}_{\text{unsub}} & = P^\mu\, \Amp_2 +\kei^\mu\, \Amp_3 + \frac{1}{\mN} \epsilon^{\mu \nu \alpha \beta} P_\nu \kei_\alpha S_\beta\, \Amp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \Bmp_1 \nonumber\\
+& + \frac{\mN}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} P_\nu v_\alpha S_\beta\, \Bmp_7 + \frac{ \mN}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \kei_\nu v_\alpha S_\beta\, \Bmp_8 \nonumber\\ 
+& + \frac{1}{\mN (v \tcdot P)} (\kei \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \kei_\alpha v_\beta\, \Bmp_9  + \frac{\mN}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \kei_\alpha v_\beta \Bmp_{10}\ . 
+\label{eq-phidecomp}
+\end{align}
+On applying Lorentz transformations ($L$), parity transformation ($P$), time-reversal ($T$), and Hermitian conjugation ($\dagger$) to the matrix elements, we find that the correlator fulfills~\cite{Musch:2011er, Boer:2011xd}:
+\begin{align}
+	&(L): &\Phi^{[\Gamma]}_{\text{unsub}}(k,P,S;v,\mu)  
+	&= \Phi^{[\Lambda_{1/2}^{-1}\Gamma\Lambda_{1/2}^{\phantom{-1}}]}_{\text{unsub}}(\Lambda k,\Lambda P, \Lambda S;\Lambda v,\mu) \ ,\label{eq-lortrans} \displaybreak[0] \\
+	&(P): &\Phi^{[\Gamma]}_{\text{unsub}}(k,P,S;v,\mu)  
+	&= \Phi^{[\gamma^0\Gamma\gamma^0]}_{\text{unsub}}(\overline{k},\overline{P},-\overline{S};\overline{v},\mu) \ ,\label{eq-conpar} \displaybreak[0] \\
+	&(T): &\left[ \Phi^{[\Gamma]}_{\text{unsub}}(k,P,S;v,\mu) \right]^* &= \Phi^{[\gamma^1 \gamma^3 \Gamma^* \gamma^3 \gamma^1]}_{\text{unsub}}(\overline{k},\overline{P},\overline{S};-\overline{v},\mu) \ , \label{eq-contime} \displaybreak[0] \\
+	&(\dagger): &\left[  \Phi^{[\Gamma]}_{\text{unsub}}(k,P,S;v,\mu) \right]^* &= \Phi^{[\gamma^0 \Gamma^\dagger \gamma^0]}_{\text{unsub}}(k,P,S;v,\mu) \ . \label{eq-conherm}
+\end{align}
+where, for a vector $c$, $\overline{c} \equiv (c^0, -c^1, -c^2, -c^3)$ denotes the vector with its spatial components reversed in sign. Hermiticity $(\dagger)$ implies that the $\Amp_i$ and $\Bmp_i$ in Eq.\ \eqref{eq-phidecomp} are real valued. Time reversal $(T)$ does not constrain the number of allowed structures, because it changes the sign of $(v\cdot P)$. Instead, time reversal $(T)$ relates the SIDIS amplitudes $A_i^{(+)}$, $B_i^{(+)}$ to the Drell-Yan amplitudes $A_i^{(-)}$, $B_i^{(-)}$.
+	
+For any of the transformations $\mathcal{T} \in \{ L, P, T, \dagger \}$, the Eqs.\ \eqref{eq-lortrans}-\eqref{eq-conherm} are of the general form 
+\begin{equation}
+	\mathcal{T}_\Phi\left(\Phi(\kei,w)\right) = \Phi\left(\mathcal{T}_\kei(\kei),\mathcal{T}_w(w)\right)
+\end{equation}
+where we omit the subscript ``unsub'' and the renormalization scale $\mu$, and the symbol $w$ collects all dependence on $\GammaOp$, $P$, $S$ and $v$. Here $\mathcal{T}_\Phi$ is either the identity function or complex conjugation. The transformation rule $\mathcal{T}_\kei(\kei)$ maps onto $\Lambda \kei$, $\kei$ or $\overline{\kei}$ and thus fulfills $a \tcdot b = \mathcal{T}_\kei(a) \tcdot \mathcal{T}_\kei(b)$ for any two vectors $a$ and $b$. The Fourier-transformed correlator 
+\begin{equation}
+	\widetilde{\Phi}(\elll,w) =  \int d^4 \kei \ e^{-i \kei \tcdot \elll} \Phi(\kei, w)
+\end{equation}
+transforms according to
+\begin{align}
+	\mathcal{T}_\Phi\left(\widetilde{\Phi}(\elll,w) \right) & =  \int d^4 \kei \ e^{\mathcal{T}_\Phi(-i)\, \kei \tcdot \elll}\ \mathcal{T}_\Phi \left( \Phi(\kei, w) \right) \nonumber \\
+	& =  \int d^4 q \ e^{\mathcal{T}_\Phi(-i)\, \mathcal{T}^{-1}_\kei(q) \tcdot \elll} \ \Phi\left(q, \mathcal{T}_w( w) \right) \nonumber \\
+	& \qquad\qquad \text{(change of variables: $\kei\rightarrow q=\mathcal{T}_\kei(\kei)$, i.e.\ $\kei=\mathcal{T}^{-1}_\kei(q)$)}  \nonumber \\
+	& =  \int d^4 q \ e^{\mathcal{T}_\Phi(-i)\, q \tcdot \mathcal{T}_\kei(\elll)} \ \Phi\left(q, \mathcal{T}_w( w) \right) \qquad (\because q \tcdot b = \mathcal{T}_\kei(q) \tcdot \mathcal{T}_\kei(b)) \nonumber \\
+    & =  \int d^4 q \ e^{-iq\left(\frac{\mathcal{T}_\Phi(i)}{i}\,  \tcdot \mathcal{T}_\kei(\elll)\right)} \ \Phi\left(q, \mathcal{T}_w( w) \right)\nonumber \\
+	& = \widetilde{\Phi}\left( \frac{\mathcal{T}_\Phi(i)}{i} \mathcal{T}_\kei(\elll), \mathcal{T}_w(w) \right)\, .
+	\label{eq-phitildetrafo}
+\end{align}
+
+In particular, under Hermitian conjugation the position-space correlator transforms as
+\begin{align}
+	&(\dagger): &\left[ \widetilde{\Phi}^{[\GammaOp]}_{\text{unsub}}(\elll,P,S;v)  \right]^* &= \widetilde{\Phi}^{[\gamma^0 \GammaOp^\dagger \gamma^0]}_{\text{unsub}}(-\elll,P,S;v)  \ .\label{eq-conhermtilde}
+\end{align}
+Let $f(\kei,w)$ be any of the structures preceding the invariant amplitudes in the parameterization of $\Phi$.
+The structure $f(\kei,w)$ is a homogeneous function of some degree $n$ in $\kei$, i.e., $f(\alpha \kei,w) = \alpha^n f(\kei,w)$ for any number $\alpha$. 
+For example, the structure $f(\kei,w) = \frac{1}{\mN (v \tcdot P)} (\kei \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \kei_\alpha v_\beta$ preceding $\Bmp_9$ in Eq.\ \eqref{eq-phidecomp} has degree $n=2$.
+If we define $\tilde f(\elll,w) \equiv f(- i \mN^2 \elll,w)$, then 
+\begin{align}
+	\mathcal{T}_\Phi\left( \tilde f(\elll, w) \right) =
+	\mathcal{T}_\Phi(-i \mN^2)^n\, \mathcal{T}_\Phi\left( f( \elll, w) \right) =
+	f\left( \mathcal{T}_\Phi(-i \mN^2) \mathcal{T}_\kei(\elll) , \mathcal{T}_w(w) \right) =
+	\tilde f \left(  \frac{\mathcal{T}_\Phi(i)}{i} \elll, w \right)\, .
+	\end{align}
+This shows that $\tilde f$ transforms like $\widetilde \Phi$ in Eq.\ \eqref{eq-phitildetrafo}.
+The parameterization of $\widetilde{\Phi}$ therefore follows from the substitution $\kei \rightarrow -i \mN^2 \elll$ in the structures parameterizing $\Phi$, which gives
+\begin{align}  \frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\text{unsub}}  = & P^\mu\, \tAmp_2 - i \mN^2 \elll^\mu\, \tAmp_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha S_\beta\, \tAmp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \tBmp_1\nonumber\\
+& + \frac{\mN}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} P_\nu v_\alpha S_\beta\, \tBmp_7  - \frac{ i \mN^3}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \elll_\nu v_\alpha S_\beta\, \tBmp_8 \nonumber\\
+& - \frac{\mN^3}{v \tcdot P} (\elll \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha v_\beta\, \tBmp_9  - \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha v_\beta \tBmp_{10}\ . 
+\label{eq-phitildedecomp}
+\end{align}
+
+The amplitudes $\tAmp_i$ and $\tBmp_i$ introduced this way are no longer constrained to be real-valued functions. Instead, Hermitian conjugation, Eq.\ \eqref{eq-conhermtilde}, gives the relation
+\begin{equation}
+	\left[ \tAmp_i(\elll^2,\elll \tcdot P, v \tcdot \elll / (v \tcdot P), \zeta^{-2},\mu^2) \right]^* = \tAmp_i(\elll^2,-\elll \tcdot P, -v \tcdot \elll / (v \tcdot P), \zeta^{-2},\mu^2)\, .\label{conditi_hermitian}
+\end{equation}
+In general, the amplitudes are complex,
+\begin{align}
+    \tAmp_i&=\tAmp_i^{\text{Re}}+i\tAmp_i^{\text{Im}}\\
+    \tBmp_i&=\tBmp_i^{\text{Re}}+i\tBmp_i^{\text{Im}}
+\end{align}
+Given the amplitudes at both $\pm b$, Eq.\ \eqref{conditi_hermitian} implies
+\begin{subequations}
+\label{eq-ReIm-parity}
+\begin{align}
+    \tAmp_i^{\text{Re}}&=\tAmp_i^{\text{(b-even)}}\\
+    \tAmp_i^{\text{Im}}&=\tAmp_i^{\text{(b-odd)}}\\
+    \tBmp_i^{\text{Re}}&=\tBmp_i^{\text{(b-even)}}\\
+    \tBmp_i^{\text{Im}}&=\tBmp_i^{\text{(b-odd)}}
+\end{align}
+\end{subequations}
+\subsection{Correlator parametrization}
+\label{sec-parametr}
+To translate Euclidean space lattice calculations into TMDs, which are defined and interpreted in light cone coordinates, we need the parametrization of the correlator $\tilde \Phi_\unsub$ in terms of manifestly Lorentz-invariant amplitudes. A parametrization of the correlator 
+$\Phi_\unsub(\kei,P,S;\infty v,\mu)$
+for link paths that extend to infinity in a direction $v$
+has been worked out in Ref.~\cite{Goeke:2005hb} and involves 32 independent amplitudes $A_i$ and $B_i$ that depend on the Lorentz-invariant quantities 
+$\kei^2$, $\kei \cdot P$, $\kei \tcdot v/v \tcdot P$ and $\hat \zeta$.
+Appendix~\ref{app:symmetries} shows that a parametrization of the corresponding $b$-dependent correlator $\tilde \Phi_\unsub$ is of the same form as the parametrization of $\Phi_\unsub$ if we substitute $\kei \rightarrow - i \mN^2 \bvec$, which is Eq.~\eqref{eq-phitildedecomp} (for $\Gamma = \gamma^\mu$):
+\begin{align}  
+\frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\text{unsub}}  = & P^\mu\, \tAmp_2 - i \mN^2 \elll^\mu\, \tAmp_3 - i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha S_\beta\, \tAmp_{12} + \frac{\mN^2}{(v \tcdot P)} v^\mu\, \tBmp_1\nonumber\\
+& + \frac{\mN}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} P_\nu v_\alpha S_\beta\, \tBmp_7  - \frac{ i \mN^3}{v \tcdot P} \epsilon^{\mu \nu \alpha \beta} \elll_\nu v_\alpha S_\beta\, \tBmp_8 \nonumber\\
+& - \frac{\mN^3}{v \tcdot P} (\elll \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha v_\beta\, \tBmp_9  - \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \elll_\alpha v_\beta \tBmp_{10}\ . 
+\label{eq-phitildedecomp-again}
+\end{align}
+For the lattice calculations, it is advantageous to start with an equivalent parametrization in which the structures explicitly depend on the staple extent $\eta$ and which is still well-defined for $v \tcdot P = 0$. Such a parametrization can be obtained from the parametrization above by replacing $v \rightarrow \eta v$ and by leaving out the factors $(v \tcdot P)^{-n}$.
+\begin{align}  
+\frac{1}{2}\widetilde \Phi^{[\gamma^\mu]}_{\text{unsub}}  = & P^\mu\, \tilde a_2 - i \mN^2 \bvec^\mu\, \tilde a_3
+		- i \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha S_\beta\, \tilde a_{12} \nonumber \\ &
+		~~+ \mN^2 \eta v^\mu\, \tilde b_1 
+		+ \mN \epsilon^{\mu \nu \alpha \beta} P_\nu \eta v_\alpha S_\beta\, \tilde b_7  
+		-  i \mN^3 \epsilon^{\mu \nu \alpha \beta} \bvec_\nu \eta v_\alpha S_\beta\, \tilde b_8 \nonumber \\ &
+		~~- \mN^3 (\bvec \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha \eta v_\beta\, \tilde b_9
+		-i \mN^3 (v \tcdot S) \epsilon^{\mu \nu \alpha \beta} P_\nu \bvec_\alpha \eta^2 v_\beta \tilde b_{10}
+\label{eq-phitildedecomp-lowere}
+\end{align}
+Here we have used lowercase amplitudes to distinguish the two parametrizations. The relation to the uppercase amplitudes is given by
+\begin{align}
+	\tAmp_i\left(\bvec^2,\bvec \tcdot P,\frac{v \tcdot \bvec}{v \tcdot P}, \frac{v^2}{(v \tcdot P)^2}, \eta v \tcdot P\right) & = \tilde a_i(\bvec^2,\bvec \tcdot P, \eta v \tcdot b, (\eta v)^2, \eta v \tcdot P)   \, , \nonumber \\
+	 \tBmp_i\left(\bvec^2,\bvec \tcdot P,\frac{v \tcdot \bvec}{v \tcdot P}, \frac{v^2}{(v \tcdot P)^2}, \eta v \tcdot P\right) & = (\eta v \tcdot P)^n\ \tilde b_i(\bvec^2,\bvec \tcdot P, \eta v \tcdot b, (\eta v)^2, \eta v \tcdot P)   \, .
+	\label{eq-ab}
+\end{align}
+where $n$ is the power with which $v \tcdot P$ appears in the denominator in front of the corresponding amplitude $\tBmp_i$ in the parametrization. 
+Notice that the $\tilde a_i$ and $\tilde b_i$ are functions of all the Lorentz-invariant products of $\bvec$, $P$ and $\eta v$.
+For the uppercase amplitudes, however, we choose to represent the dependence on these invariants in the third and fourth arguments by $\eta$-independent expressions, to facilitate taking the limit $\eta \rightarrow \pm \infty$. 
+The dependence on the Collins-Soper parameter $\hat\zeta$ is given by the fourth argument, $v^2/(v \tcdot P)^2 = - 1 /(\mN\hat\zeta)^2$, 
+while the fifth argument, $\eta v \tcdot P$, characterizes the length of the gauge link and distinguishes between future- and past-pointing
+Wilson lines. 
+With $\tAmp^{[x]}_i$ as defined in Sec.~\ref{sec:amplitudes_tmds}, Eq.~\eqref{eq-fourint} gives $\fourint \tAmp_i = \int \frac{d^2 \vprp{\bvec}'}{(2\pi)^2}\, e^{-i\vprp{\bvec}'\tcdot\vprp{\kei}}\, \tAmp^{[x]}_i(x,\vprp{\bvec}'^2)$. Inserting $f_1 = 2\fourint\tAmp_{2B}$ into Eq.~\eqref{eq-FTMD}, we have for the unpolarized TMD,
+\begin{align}
+	\tilde f_1(x,\vprp{\bvec}^2) 
+	&= 2 \int d^2\vprp{\kei}\, e^{i\vprp{\bvec}\tcdot\vprp{\kei}} \int \frac{d^2 \vprp{\bvec}'}{(2\pi)^2}\, e^{-i\vprp{\bvec}'\tcdot\vprp{\kei}}\, \tAmp^{[x]}_{2B}(x,\vprp{\bvec}'^2) 
+	= 2 \int d^2 \vprp{\bvec}'\, \delta^{(2)}(\vprp{\bvec}-\vprp{\bvec}')\, \tAmp^{[x]}_{2B}(x,\vprp{\bvec}'^2) \nonumber\\
+	&= 2\, \tAmp^{[x]}_{2B}(x,\vprp{\bvec}^2)\,,
+\end{align}
+For Sivers TMD, on starting from $f_{1T}^\perp = 4\mN^2\,\partial_{\vprp{\kei}^2}\fourint\tAmp_{12B}$ and using $\vect{k}_j\,\partial_{\vprp{\kei}^2} = \tfrac12\,\partial_{\vect{k}_j}$, differentiating Eq.~\eqref{eq-FTMD} with respect to $\vect{b}_j$, we have
+\begin{align}
+	\partial_{\vect{b}_j}\tilde f_{1T}^\perp 
+	&= \int d^2\vprp{\kei}\,(i\vect{k}_j)\,e^{i\vprp{\bvec}\tcdot\vprp{\kei}}\; 4\mN^2\,\partial_{\vprp{\kei}^2}\fourint\tAmp_{12B}
+	 = 2i\mN^2 \int d^2\vprp{\kei}\, e^{i\vprp{\bvec}\tcdot\vprp{\kei}}\;\partial_{\vect{k}_j}\fourint\tAmp_{12B} \nonumber\\
+	&= -2i\mN^2\,(i\vect{b}_j) \int d^2\vprp{\kei}\, e^{i\vprp{\bvec}\tcdot\vprp{\kei}}\,\fourint\tAmp_{12B}
+	 = 2\mN^2\,\vect{b}_j\,\tAmp^{[x]}_{12B}(x,\vprp{\bvec}^2)\,,
+\end{align}
+where we integrated by parts in $\vect{k}_j$ (the surface term vanishes for $|\vprp{\bvec}|>0$) and used the same $\delta$-function step as for $f_1$. Since $\partial_{\vect{b}_j}\tilde f = 2\vect{b}_j\,\partial_{\vprp{\bvec}^2}\tilde f$, this gives $\partial_{\vprp{\bvec}^2}\tilde f_{1T}^\perp = \mN^2\,\tAmp^{[x]}_{12B}$. Eq.~\eqref{eq-dFTMD} with $n=1$ then yields
+\begin{equation}
+	\tilde f_{1T}^{\perp(1)}(x,\vprp{\bvec}^2) = -\frac{2}{\mN^2}\,\partial_{\vprp{\bvec}^2}\tilde f_{1T}^\perp(x,\vprp{\bvec}^2) = -2\,\tAmp^{[x]}_{12B}(x,\vprp{\bvec}^2)\,.
+\end{equation}
+These results establish Eqs.~\eqref{eq-xintderfttmds1} and~\eqref{eq-xintderfttmds2}.
+

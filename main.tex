@@ -1,5 +1,39 @@
 \documentclass[aps,prd,preprint,groupedaddress,amsmath,amssymb]{revtex4-2}
 
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{cancel}
+\usepackage{xcolor}
+
+% Macros carried over from the thesis
+\providecommand{\texorpdfstring}[2]{#1}
+\newcommand{\tAmp}{\widetilde{A}}
+\newcommand{\tBmp}{\widetilde{B}}
+\newcommand{\Amp}{\ensuremath{A^{(+)}}}
+\newcommand{\Bmp}{\ensuremath{B^{(+)}}}
+\newcommand{\vect}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\vprp}[1]{\vect{#1}_{\mathrm T}}
+\newcommand{\tcdot}{{\cdot}}
+\newcommand{\bvec}{b}
+\newcommand{\elll}{b}
+\newcommand{\kei}{k}
+\newcommand{\mN}{m_N}
+\newcommand{\zetahat}{{\hat \zeta}}
+\newcommand{\unsub}{\text{unsubtr.}}
+\newcommand{\GammaOp}{\Gamma}
+\newcommand{\myeps}{\ensuremath{\epsilon}}
+\newcommand{\softf}{\mathcal{S}}
+\newcommand{\fourint}{\ensuremath{\int_\mathcal{F}}}
+\newcommand{\toddmark}[1]{\ensuremath{\Bigg[#1\Bigg]_{\text{\tiny{odd}}}}}
+\newcommand{\Wline}[1]{\ensuremath{{\mathcal{U}}[#1]}}
+\newcommand{\WlineC}[1]{\ensuremath{{\mathcal{U}}{[#1]}}}
+\newcommand{\U}{\mathcal{U}{[\mathcal{C}_{b}]}}
+\newcommand{\nminus}{\ensuremath{n}}
+\newcommand{\nucl}[1]{{#1}}
+\newcommand{\quark}{q}
+\newcommand{\prp}{\perp}
+
 \begin{document}
 
 \title{Dependence of the Sivers TMD Shift on Quark Longitudinal Momentum Fraction $x$ from Lattice QCD}
@@ -11,26 +45,42 @@
 \date{\today}
 
 \begin{abstract}
-% TODO(Hari): abstract
+We compute the dependence of the isovector ($u-d$) Sivers shift on the quark longitudinal momentum fraction $x$ in lattice QCD with 2+1 flavors of clover-improved Wilson fermions at a lattice spacing of $a=0.11403$~fm and a pion mass of $m_\pi=317$~MeV. The transverse momentum dependent parton distributions (TMDs) are defined through quark bilinears with staple-shaped Wilson lines. The generalized Sivers shift $\langle k_y\rangle_{TU}=m_N\,\tilde f_{1T}^{\perp(1)}/\tilde f_1^{(0)}$, the ratio of the Sivers TMD to the unpolarized TMD, is obtained from a ratio of Lorentz-invariant amplitudes. To extract the $x$-dependence, we scan the full accessible range of $b\cdot P$, the variable Fourier conjugate to $x$. This requires staples along off-axis lattice directions, which we obtain by interpolation.
+% TODO(Hari): the remaining sentences of the thesis abstract report results from thesis Secs. 6-7 (fits, light-cone extrapolation, factorization); restore them when those sections are in the paper:
+% Using the PySR symbolic regression and statistical modeling, we systematically explored several ans\"atze that satisfy physical constraints, and we describe the amplitudes at four nucleon momenta with a global fit in $b\cdot P$, $b^2$, and the staple length $\eta$. After extrapolation to the light-cone limit $\hat\zeta\to\infty$, the magnitude of the $x$-weighted isovector Sivers shift $x\langle k_y\rangle_{TU}$ at $|b_T|=0.34$~fm, for SIDIS/DY, is about $0.006$--$0.011$~GeV for $0.3\le x\le 0.4$. For $0.34\le|b_T|\le 0.94$~fm, the isovector Sivers shift is close to, but not exactly, a product of a function of $x$ and a function of $|b_T|$, with a relative distance of 6--8\% from the best factorized form.
 \end{abstract}
 
 \maketitle
 
-\section{Introduction}
-% TODO(Hari)
-
 \section{Lattice Setup}
-% TODO(Hari)
+\label{sec:setup}
+% TODO(Hari): ensemble details (action, number of configurations, source positions, smearing, nucleon two-point analysis).
+All results are for the isovector $u-d$ combination on a $32^3\times96$ ensemble with 2+1 flavors of clover-improved Wilson fermions, $a=0.11403$~fm and $m_\pi=317$~MeV. The nucleon mass is $m_N=0.6228(28)/a=1077.8(48)$~MeV. The nucleon momentum is $\vect{P}=(2\pi/\hat L a)(n,0,0)$ with $n=-1,-2,-3,-4$ and $\hat L=32$.
+
+\section{Formalism}
+\label{sec:formalism}
+\input{sections/formalism}
+
+\section{Amplitudes from Lattice Data}
+\label{sec:amplitudes_lattice}
+\input{sections/amplitudes}
 
 \section{Results}
-% TODO(Hari)
+\label{sec:results}
+% TODO(Hari): fits, \hat\zeta\to\infty extrapolation and factorization test (thesis Secs. 6-7).
 
 \section{Conclusions}
+\label{sec:conclusions}
 % TODO(Hari)
 
 \begin{acknowledgments}
 % TODO(Hari)
 \end{acknowledgments}
+
+\appendix
+\input{sections/appendixA}
+\input{sections/appendixB}
+\input{sections/appendix_amp_figures}
 
 \bibliography{refs}
 
