@@ -36,6 +36,23 @@
 \newcommand{\quark}{q}
 \newcommand{\prp}{\perp}
 
+% Amplitude plots, thesis layout: four wide plots stacked (Re over Im, each as two coordinate choices).
+% #1 = 2B or 12B, #2 = P_L value (e.g. -1)
+\newcommand{\ampstackthreeD}[2]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_PL#2_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_Pb_bsq_PL#2_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_PL#2_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_Pb_bsq_PL#2_3D.pdf}
+\end{tabular}}
+\newcommand{\ampstacketa}[2]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_eta8_PL#2_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_Pb_bsq_eta8_PL#2_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_eta8_PL#2_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_Pb_bsq_eta8_PL#2_2D.pdf}
+\end{tabular}}
+
 \begin{document}
 
 \title{Dependence of the Sivers TMD Shift on Quark Longitudinal Momentum Fraction $x$ from Lattice QCD}

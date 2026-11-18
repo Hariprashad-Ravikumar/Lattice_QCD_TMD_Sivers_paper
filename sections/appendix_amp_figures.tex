@@ -1,21 +1,34 @@
 \section{Amplitudes at the remaining momenta}
 \label{app:amps}
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.48\linewidth]{figures/amps/ReA2B_Pb_bsq_eta8_PL-2_2D.pdf}\hfill
-\includegraphics[width=0.48\linewidth]{figures/amps/ImA2B_Pb_bsq_eta8_PL-2_2D.pdf}\\[1ex]
-\includegraphics[width=0.48\linewidth]{figures/amps/ReA12B_Pb_bsq_eta8_PL-2_2D.pdf}\hfill
-\includegraphics[width=0.48\linewidth]{figures/amps/ImA12B_Pb_bsq_eta8_PL-2_2D.pdf}
-\caption{Real (left) and imaginary (right) parts of $\tAmp_{2B}$ (top) and $\tAmp_{12B}$ (bottom) in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),\,b^2/a^2)$ space at fixed $\eta|\vect{v}|/a=8$, for $\vect{P}\cdot a\hat{L}/(2\pi)=(-2,0,0)$ ($\hat\zeta=0.294367$).}
-\label{fig:amps_P2}
-\end{figure*}
+Section~\ref{sec:amplitudes_lattice} shows the extracted amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ at the smallest simulated momentum, $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ (Figs.~\ref{fig:A2B_3D_P1}--\ref{fig:A12B_eta8_P1}). This appendix gives the same four figures at the three larger momenta, $\vect{P}\cdot a\hat{L}/(2\pi)=\{-2,0,0\}$, $\{-3,0,0\}$ and $\{-4,0,0\}$, with $\hat\zeta=0.294367$, $0.539684$ and $0.785756$. In each case the amplitudes are plotted first in the discrete $(b_L/a,b_T/a,\eta|\vect{v}|/a)$ lattice grid and in the Lorentz-invariant $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2,\eta|\vect{v}|/a)$ space, and then at fixed $\eta|\vect{v}|/a=8$.
 
-\begin{figure*}[htbp]
+% #1 = P_L value, #2 = zeta-hat, #3 = label suffix
+\newcommand{\ampappendixset}[3]{%
+\begin{figure*}[p]
 \centering
-\includegraphics[width=0.48\linewidth]{figures/amps/ReA2B_Pb_bsq_eta8_PL-3_2D.pdf}\hfill
-\includegraphics[width=0.48\linewidth]{figures/amps/ImA2B_Pb_bsq_eta8_PL-3_2D.pdf}\\[1ex]
-\includegraphics[width=0.48\linewidth]{figures/amps/ReA12B_Pb_bsq_eta8_PL-3_2D.pdf}\hfill
-\includegraphics[width=0.48\linewidth]{figures/amps/ImA12B_Pb_bsq_eta8_PL-3_2D.pdf}
-\caption{Real (left) and imaginary (right) parts of $\tAmp_{2B}$ (top) and $\tAmp_{12B}$ (bottom) in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),\,b^2/a^2)$ space at fixed $\eta|\vect{v}|/a=8$, for $\vect{P}\cdot a\hat{L}/(2\pi)=(-3,0,0)$ ($\hat\zeta=0.539684$).}
-\label{fig:amps_P3}
+\ampstackthreeD{2B}{#1}
+\caption{Same as Fig.~\ref{fig:A2B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:A2B_3D_#3}
 \end{figure*}
+\begin{figure*}[p]
+\centering
+\ampstackthreeD{12B}{#1}
+\caption{Same as Fig.~\ref{fig:A12B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:A12B_3D_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\ampstacketa{2B}{#1}
+\caption{Same as Fig.~\ref{fig:A2B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:A2B_eta8_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\ampstacketa{12B}{#1}
+\caption{Same as Fig.~\ref{fig:A12B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:A12B_eta8_#3}
+\end{figure*}}
+
+\ampappendixset{-2}{0.294367}{P2}
+\ampappendixset{-3}{0.539684}{P3}
+\ampappendixset{-4}{0.785756}{P4}
