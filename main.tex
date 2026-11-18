@@ -1,4 +1,4 @@
-\documentclass[aps,prd,twocolumn,amsmath,amssymb,floatfix]{revtex4-2}
+\documentclass[aps,prd,twocolumn,amsmath,amssymb]{revtex4-2}
 
 \usepackage{graphicx}
 \usepackage{mathtools}
@@ -36,21 +36,35 @@
 \newcommand{\quark}{q}
 \newcommand{\prp}{\perp}
 
-% Amplitude plots, thesis layout: four wide plots stacked (Re over Im, each as two coordinate choices).
-% #1 = 2B or 12B, #2 = P_L value (e.g. -1)
-\newcommand{\ampstackthreeD}[2]{%
+% Amplitude plots, thesis layout: four wide plots stacked: Re and Im of A_2B, then Re and Im of A_12B.
+% #1 = P_L value (e.g. -1). BLBT = (b_L,b_T) space, PBB = (P.b,b^2) space.
+\newcommand{\ampstackBLBTthreeD}[1]{%
 \begin{tabular}{c}
-\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_PL#2_3D.pdf}\\
-\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_Pb_bsq_PL#2_3D.pdf}\\[2ex]
-\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_PL#2_3D.pdf}\\
-\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_Pb_bsq_PL#2_3D.pdf}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA2B_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA2B_PL#1_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA12B_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_PL#1_3D.pdf}
 \end{tabular}}
-\newcommand{\ampstacketa}[2]{%
+\newcommand{\ampstackBLBTeta}[1]{%
 \begin{tabular}{c}
-\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_eta8_PL#2_2D.pdf}\\
-\includegraphics[width=0.75\textwidth]{figures/amps/ReA#1_Pb_bsq_eta8_PL#2_2D.pdf}\\[2ex]
-\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_eta8_PL#2_2D.pdf}\\
-\includegraphics[width=0.75\textwidth]{figures/amps/ImA#1_Pb_bsq_eta8_PL#2_2D.pdf}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA2B_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA2B_eta8_PL#1_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA12B_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_eta8_PL#1_2D.pdf}
+\end{tabular}}
+\newcommand{\ampstackPBBthreeD}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA2B_Pb_bsq_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA2B_Pb_bsq_PL#1_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA12B_Pb_bsq_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_Pb_bsq_PL#1_3D.pdf}
+\end{tabular}}
+\newcommand{\ampstackPBBeta}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA2B_Pb_bsq_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA2B_Pb_bsq_eta8_PL#1_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/amps/ReA12B_Pb_bsq_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_Pb_bsq_eta8_PL#1_2D.pdf}
 \end{tabular}}
 
 \begin{document}

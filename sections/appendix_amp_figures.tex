@@ -1,35 +1,47 @@
-\section{Amplitudes at the remaining momenta}
-\label{app:amps}
-This appendix shows the amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ at the three larger momenta, in the same format as Figs.~\ref{fig:A2B_3D_P1}--\ref{fig:A12B_eta8_P1}.
+\section{Amplitudes in the \texorpdfstring{$(b_L,b_T)$}{(bL,bT)} space at the remaining momenta}
+\label{app:amps_blbt}
+The $(b_L/a,b_T/a)$ space figures at the three larger momenta, in the same format as Figs.~\ref{fig:BLBT_3D_P1} and~\ref{fig:BLBT_eta8_P1}.
+
+\section{Amplitudes in the \texorpdfstring{$(\vect{P}\cdot\vect{b},b^2)$}{(P.b,b2)} space}
+\label{app:amps_pbb}
+The amplitudes after the mapping to the Lorentz-invariant variables, at all four momenta.
 
 % #1 = P_L value, #2 = zeta-hat, #3 = label suffix
-\newcommand{\ampappendixset}[3]{%
+\newcommand{\ampappendixBLBT}[3]{%
 \begin{figure*}[p]
 \centering
-\ampstackthreeD{2B}{#1}
-\caption{Same as Fig.~\ref{fig:A2B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A2B_3D_#3}
+\ampstackBLBTthreeD{#1}
+\caption{Same as Fig.~\ref{fig:BLBT_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:BLBT_3D_#3}
 \end{figure*}
 \begin{figure*}[p]
 \centering
-\ampstackthreeD{12B}{#1}
-\caption{Same as Fig.~\ref{fig:A12B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A12B_3D_#3}
-\end{figure*}
-\begin{figure*}[p]
-\centering
-\ampstacketa{2B}{#1}
-\caption{Same as Fig.~\ref{fig:A2B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A2B_eta8_#3}
-\end{figure*}
-\begin{figure*}[p]
-\centering
-\ampstacketa{12B}{#1}
-\caption{Same as Fig.~\ref{fig:A12B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A12B_eta8_#3}
+\ampstackBLBTeta{#1}
+\caption{Same as Fig.~\ref{fig:BLBT_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:BLBT_eta8_#3}
 \end{figure*}}
 
-\ampappendixset{-2}{0.294367}{P2}
-\ampappendixset{-3}{0.539684}{P3}
-\ampappendixset{-4}{0.785756}{P4}
+\ampappendixBLBT{-2}{0.294367}{P2}
+\ampappendixBLBT{-3}{0.539684}{P3}
+\ampappendixBLBT{-4}{0.785756}{P4}
+
+% #1 = P_L value, #2 = zeta-hat, #3 = label suffix
+\newcommand{\ampappendixPBB}[3]{%
+\begin{figure*}[p]
+\centering
+\ampstackPBBthreeD{#1}
+\caption{Real and imaginary parts of the $\tAmp_{2B}$ amplitude (top 2 rows) and of the $\tAmp_{12B}$ amplitude (bottom 2 rows) in the $((\vect{P}\cdot \vect{b})\hat{L}/(2\pi),b^{2}/a^2,\eta|\vect{v}|/a)$ space for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$). In each pair of rows, the real part is shown above the imaginary part.}
+\label{fig:PBB_3D_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\ampstackPBBeta{#1}
+\caption{Real and imaginary parts of the $\tAmp_{2B}$ amplitude (top 2 rows) and of the $\tAmp_{12B}$ amplitude (bottom 2 rows) in the $((\vect{P}\cdot \vect{b})\hat{L}/(2\pi),b^{2}/a^2)$ space for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$) at fixed $\eta|\vect{v}|/a=8$. In each pair of rows, the real part is shown above the imaginary part.}
+\label{fig:PBB_eta8_#3}
+\end{figure*}}
+
+\ampappendixPBB{-1}{0.090772}{P1}
+\ampappendixPBB{-2}{0.294367}{P2}
+\ampappendixPBB{-3}{0.539684}{P3}
+\ampappendixPBB{-4}{0.785756}{P4}
 \clearpage
