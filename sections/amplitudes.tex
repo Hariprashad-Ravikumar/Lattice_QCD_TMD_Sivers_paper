@@ -233,11 +233,10 @@ To complete the geometric mapping, we must also express the invariant $\bvec\cdo
     \bvec^2 &= \left( \frac{P \cdot b}{-P_L} \right)^2 + b_T^2
 \end{align}
 
-By replacing $b_L$ and $\bvec^2$ with these invariant expressions, we transform our discrete lattice amplitudes into continuous functions of the Lorentz-invariant variables:
-\begin{align}
-    &\tAmp_{iB}(b_L, b_T, \hat{\zeta}) \nonumber \\
-    &\quad \xrightarrow{\text{Coordinate Transformation}} \tAmp_{iB}\left( P \cdot b, \bvec^2, \hat{\zeta} \right)
-\end{align}
+Under the coordinate transformation given by these two substitutions, $b_L\to P\cdot b/(-P_L)$ and $\bvec^2\to(P\cdot b/(-P_L))^2+b_T^2$, our discrete lattice amplitudes become continuous functions of the Lorentz-invariant variables:
+\begin{equation}
+    \tAmp_{iB}(b_L, b_T, \hat{\zeta}) \to \tAmp_{iB}\left( P \cdot b, \bvec^2, \hat{\zeta} \right)
+\end{equation}
 
 With the amplitudes now expressed as functions of $P \cdot b$, the Fourier transform of Eq.~\eqref{eq:sivers_shift_xdep} can be evaluated directly. This connects the Euclidean correlation ratios evaluated on the lattice to the physical, $x$-dependent phenomenological observables needed to study the Sivers effect.
 
