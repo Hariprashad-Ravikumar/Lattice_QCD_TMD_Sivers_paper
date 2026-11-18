@@ -1,0 +1,26 @@
+\section{Distance from a factorized form}
+\label{app:factorization_metric}
+
+For a function $f(x,|\vect b_T|)$ we minimize $J=\int dx\,d|\vect b_T|\,\big(f-g(x)h(|\vect b_T|)\big)^2$ over $g$ and $h$. The stationarity conditions give
+\begin{equation}
+h(|\vect b_T|)=\frac{\int dx\,f\,g}{\int dx\,g^2}\,,\qquad
+g(x)=\frac{\int d|\vect b_T|\,f\,h}{\int d|\vect b_T|\,h^2}\,.
+\end{equation}
+Eliminating $h$ gives a closed equation for $g$, which we solve by iteration from $g=1$ until $g$ and the relative distance $\sqrt{J/N}$, $N=\int dx\,d|\vect b_T|\,f^2$, stop changing within a fixed tolerance. On a discrete grid the integrals become sums, and the iteration is applied to each Jackknife sample of the extrapolated amplitudes. The windows $x\in[0,1]$, $[0.1,0.9]$, $[0.2,0.8]$, $[0.3,0.8]$ test that the result does not depend on the behavior near $x=0$.
+
+Applied to the individual extrapolated amplitudes, the same test gives the relative distances in Table~\ref{tab:fact_amps}. Every amplitude has a nonzero distance in every window, and all of them shrink as the window narrows away from $x=0$, consistent with the Bessel-function behavior near the origin, which differs between amplitudes because of the parameter mismatch described in Sec.~\ref{sec:factorization}.
+
+\begin{table}[H]
+\caption{Relative distance from a factorized form for the extrapolated amplitudes, on the same $|\vect b_T|$ grid and $x$-windows as Table~\ref{tab:fact_sivers}.}
+\label{tab:fact_amps}
+\begin{ruledtabular}
+\begin{tabular}{lcccc}
+Amplitude & $[0,1]$ & $[0.1,0.9]$ & $[0.2,0.8]$ & $[0.3,0.8]$ \\
+\hline
+$\tAmp^{[x]\text{Re}}_{12B}$ & $0.0804(18)$ & $0.0573(26)$ & $0.0397(24)$ & $0.0303(21)$ \\
+$\tAmp^{[x]\text{Re}}_{2B}$ & $0.08138(65)$ & $0.0718(36)$ & $0.0581(55)$ & $0.0478(56)$ \\
+$i\tAmp^{[x]\text{Im}}_{2B}$ & $0.107(18)$ & $0.0868(30)$ & $0.0578(28)$ & $0.0425(23)$ \\
+$\tAmp^{[x]}_{2B}$ & $0.1943(63)$ & $0.0926(59)$ & $0.0594(40)$ & $0.0470(47)$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}

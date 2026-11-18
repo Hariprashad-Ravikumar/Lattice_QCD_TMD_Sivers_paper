@@ -67,6 +67,32 @@
 \includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_Pb_bsq_eta8_PL#1_2D.pdf}
 \end{tabular}}
 
+% Fit plots (data points and fitted surfaces), thesis layout: Re A_2B, Im A_2B, Re A_12B stacked. #1 = P_L value.
+\newcommand{\fitstackBLBTthreeD}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA2B_PL#1_WithFit_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ImA2B_PL#1_WithFit_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA12B_PL#1_WithFit_3D.pdf}
+\end{tabular}}
+\newcommand{\fitstackBLBTeta}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA2B_eta8_PL#1_WithFit_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ImA2B_eta8_PL#1_WithFit_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA12B_eta8_PL#1_WithFit_2D.pdf}
+\end{tabular}}
+\newcommand{\fitstackPBBthreeD}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA2B_Pb_bsq_PL#1_WithFit_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ImA2B_Pb_bsq_PL#1_WithFit_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA12B_Pb_bsq_PL#1_WithFit_3D.pdf}
+\end{tabular}}
+\newcommand{\fitstackPBBeta}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA2B_Pb_bsq_eta8_PL#1_WithFit_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ImA2B_Pb_bsq_eta8_PL#1_WithFit_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{figures/fits/ReA12B_Pb_bsq_eta8_PL#1_WithFit_2D.pdf}
+\end{tabular}}
+
 \begin{document}
 
 \title{Dependence of the Sivers TMD Shift on Quark Longitudinal Momentum Fraction $x$ from Lattice QCD}
@@ -201,9 +227,15 @@ $t_{\rm src}$, $t_{\rm snk}$, $t_{\rm sep}$ & $0$, $10$, $10$ \\
 \label{sec:amplitudes_lattice}
 \input{sections/amplitudes}
 
-\section{Results}
-\label{sec:results}
-\input{sections/results}
+\section{Fitting Methodologies and Stability Analysis}
+\label{sec:fitting_analysis}
+\input{sections/analysis_fitting}
+\clearpage
+
+\section{Extrapolation to the Physical Limit}
+\label{sec:extrapolation}
+\input{sections/analysis_extrapolation}
+\clearpage
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -226,6 +258,8 @@ We thank Matthew Sievert for helpful discussions on TMDs and Andrew Dotson for h
 \input{sections/appendixB}
 \input{sections/appendix_amp_figures}
 \input{sections/appendixC}
+\input{sections/appendix_fit_results}
+\input{sections/appendix_factorization}
 
 \clearpage
 \bibliography{refs}

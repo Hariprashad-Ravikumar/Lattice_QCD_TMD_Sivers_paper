@@ -1,0 +1,107 @@
+\section{Final fits at the remaining momenta}
+\label{app:fit_results}
+This appendix gives the parameters of the simultaneous fits at all four momenta and the fit figures not shown in Sec.~\ref{sec:simultaneous_fit}: the fits at $P_L=-1$ in the $(P\cdot b,b^2)$ space, and the fits and the $x$ dependence at $P_L=-2,-3,-4$.
+
+\begin{table}
+\caption{Parameters of the simultaneous fits at $P_L=-1,\ldots,-4$. Primed and double-primed symbols refer to $\tAmp_{12B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$.}
+\label{tab:fit_params}
+\footnotesize
+\setlength{\tabcolsep}{1.5pt}
+\begin{ruledtabular}
+\begin{tabular}{lcccc}
+ & $P_L=-1$ & $P_L=-2$ & $P_L=-3$ & $P_L=-4$ \\
+\hline
+$a$ & $3.863(11)$ & $3.9833(80)$ & $4.0061(31)$ & $4.0086(15)$ \\
+$c$ & $0.336(40)$ & $0.166(35)$ & $0.45(12)$ & $0.27(21)$ \\
+$d$ & $0.1630(74)$ & $0.1020(46)$ & $0.136(11)$ & $0.122(13)$ \\
+$k_1$ & $12.288(23)$ & $12.305(14)$ & $12.284(11)$ & $12.2751(58)$ \\
+$k_2$ & $-36.1965(45)$ & $-36.1919(27)$ & $-36.1973(19)$ & $-36.19925(89)$ \\
+$j$ & $1.627(25)$ & $2.061(20)$ & $2.085(10)$ & $2.0654(56)$ \\
+\hline
+$a''$ & $0.267(13)$ & $0.368(12)$ & $0.328(11)$ & $0.269(13)$ \\
+$c''$ & $0.2253(69)$ & $0.1346(69)$ & $0.163(15)$ & $0.264(47)$ \\
+$d''$ & $0.2205(66)$ & $0.1305(67)$ & $0.147(13)$ & $0.196(14)$ \\
+$j''$ & $1.108(21)$ & $1.141(20)$ & $1.057(15)$ & $1.0084(79)$ \\
+\hline
+$a'$ & $0.658(22)$ & $0.632(19)$ & $0.569(13)$ & $0.5824(55)$ \\
+$c'$ & $0.0773(46)$ & $0.0769(54)$ & $0.100(17)$ & $0.116(19)$ \\
+$d'$ & $0.0747(43)$ & $0.0741(52)$ & $0.094(16)$ & $0.102(18)$ \\
+$j'$ & $2.0054(90)$ & $2.0141(69)$ & $1.9969(49)$ & $2.0059(34)$ \\
+\hline
+$f$ & $0.4702(46)$ & $0.5357(66)$ & $0.540(15)$ & $0.577(19)$ \\
+\hline
+$\chi^2/\text{dof}$ & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+% #1 = P_L value, #2 = zeta-hat, #3 = label suffix
+\newcommand{\fitappendixset}[3]{%
+\begin{figure*}[p]
+\centering
+\fitstackBLBTthreeD{#1}
+\caption{Same as Fig.~\ref{fig:fit3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:fit3D_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\fitstackBLBTeta{#1}
+\caption{Same as Fig.~\ref{fig:fit_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:fit_eta8_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\fitstackPBBthreeD{#1}
+\caption{Simultaneous fit (surfaces) and lattice data (points) in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2,\eta|\vect{v}|/a)$ space for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$), for $\tAmp_{2B}^{\text{Re}}$ (top), $\tAmp_{2B}^{\text{Im}}$ (middle) and $\tAmp_{12B}^{\text{Re}}$ (bottom).}
+\label{fig:fitPBB3D_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\fitstackPBBeta{#1}
+\caption{The fit of Fig.~\ref{fig:fitPBB3D_#3} at fixed $\eta|\vect{v}|/a=8$ in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2)$ space.}
+\label{fig:fitPBB_eta8_#3}
+\end{figure*}}
+
+% P_L = -1 in the (P.b,b^2) space
+\begin{figure*}[p]
+\centering
+\fitstackPBBthreeD{-1}
+\caption{Simultaneous fit (surfaces) and lattice data (points) in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2,\eta|\vect{v}|/a)$ space for $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ ($\hat{\zeta}=0.090772$), for $\tAmp_{2B}^{\text{Re}}$ (top), $\tAmp_{2B}^{\text{Im}}$ (middle) and $\tAmp_{12B}^{\text{Re}}$ (bottom).}
+\label{fig:fitPBB3D_P1}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\fitstackPBBeta{-1}
+\caption{The fit of Fig.~\ref{fig:fitPBB3D_P1} at fixed $\eta|\vect{v}|/a=8$ in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2)$ space.}
+\label{fig:fitPBB_eta8_P1}
+\end{figure*}
+
+\fitappendixset{-2}{0.294367}{P2}
+\fitappendixset{-3}{0.539684}{P3}
+\fitappendixset{-4}{0.785756}{P4}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/fits/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-2.pdf}\\[2ex]
+\includegraphics[width=0.6\textwidth]{figures/fits/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-3.pdf}\\[2ex]
+\includegraphics[width=0.6\textwidth]{figures/fits/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-4.pdf}
+\caption{Same as Fig.~\ref{fig:ft_xdep_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{-2,0,0\}$, $\{-3,0,0\}$ and $\{-4,0,0\}$ (top to bottom).}
+\label{fig:ft_xdep_others}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/fits/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-1.pdf}\\[2ex]
+\includegraphics[width=0.65\textwidth]{figures/fits/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-2.pdf}
+\caption{The quantities of Fig.~\ref{fig:ft_xdep_P1} as functions of $x$ and $b^2/a^2\in[9,68]$ for $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ (top) and $\{-2,0,0\}$ (bottom).}
+\label{fig:ft_xdep_3D_a}
+\end{figure*}
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/fits/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-3.pdf}\\[2ex]
+\includegraphics[width=0.65\textwidth]{figures/fits/FT_xdep_3D_A2B_A12B_bmin3_eta610_PL-4.pdf}
+\caption{As Fig.~\ref{fig:ft_xdep_3D_a}, for $\vect{P}\cdot a\hat{L}/(2\pi)=\{-3,0,0\}$ (top) and $\{-4,0,0\}$ (bottom).}
+\label{fig:ft_xdep_3D_b}
+\end{figure*}
+\clearpage

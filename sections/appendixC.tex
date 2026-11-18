@@ -1,132 +1,44 @@
-\section{Fit exploration and fit parameters}
+\section{Fit exploration}
 \label{app:fit_exploration}
+This appendix collects the fits that lead to the choice of the coupled Lorentzian power law in Sec.~\ref{sec:power_law} and of the $\eta$ dependence in Sec.~\ref{sec:eta_dependence}. All fits are for $P_L=-1$, $|\vect b|\ge3a$ and $6\le\eta\le10$.
 
-\subsection{Symbolic regression}
+\subsection{Exponential decay in $|\vect b|$}
 
-We used \texttt{PySR}~\cite{Cranmer2023pysr} as a guide to the functional form of $\tAmp_{2B}^{\text{Re}}$ at $P_L=-1$ for $|\vect b|\ge3a$ and $6\le\eta\le10$. The operator library contains arithmetic and exponential functions and a Lorentzian-type operator $\text{lor}(x,y)=1/(1+x^2+y^2)^2$, with nesting constraints that forbid double exponentials. A Gaussian or a diverging expression can fit the finite lattice grid and still make the Fourier integral over $P\cdot b$ diverge, so the loss is
-\begin{equation}
-\mathcal L=\frac{\chi^2}{\text{dof}}+\epsilon\sum_{b_T}\sum_{b_L^{\text{large}}}\big|\tAmp_{2B}^{\text{Re,model}}(b_L,b_T)\big|\,,
-\end{equation}
-with $\epsilon=0.1$ and the penalty evaluated at five points with $b_L\gg1$ ($\eta\in\{6,8,10\}$, $b_L$ up to $80a$).
-
-At the lowest complexities the search isolates $e^{-f\eta}$ with $f\approx0.7$. From complexity $C=7$ to $12$ it adds Lorentzian denominators $(1+b_L^2+b_T^2)^{-j}$. No Gaussian profile appears anywhere on the Pareto front. The $C=14$ and $C=16$ models are
-\begin{align}
-\tAmp_{2B}^{\text{Re}}&=\frac{39.71}{(1+b_L^2+b_T^2)^{1.39}}\,e^{-0.534\eta}\,,\\
-\tAmp_{2B}^{\text{Re}}&=\frac{245.5}{(1+b_L^2+b_T^2)^{1.26}}\,e^{-0.468\eta}-0.00127\,,
-\end{align}
-with $\mathcal L=2.03$ for the second one. The power-law tail is absolutely integrable for $j>1/2$, and the factorized form $e^{-f\eta}g(b^2)$ lets the common $\eta$ factor cancel in the Sivers shift. Fig.~\ref{fig:pysr_benchmark} compares the models with the data, and Fig.~\ref{fig:pysr_gauss} shows that the data curve upward away from a Gaussian straight line on a logarithmic ordinate.
-
-The search has a structural limitation: every model on the front from $C=7$ to $21$ depends on $b_L$ and $b_T$ only through $b^2=b_L^2+b_T^2$, so it is independent of $P\cdot b$ in the invariant variables and cannot describe the dependence that the Fourier transform to $x$ needs. \texttt{PySR} thus guides the $b^2$ and $\eta$ dependence only. Starting from Gaussian, exponential and power-law forms, we then explored forms with $P\cdot b$ dependence.
+Fig.~\ref{fig:exp_straight} is the straight-line test for an exponential decay $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ in $|\vect b|=\sqrt{b^2}$. The exponential fit has $\mathcal L\approx2.63$ with $e^{-f\eta}$, and $2.26$ with a constant offset added, which is above the $C=16$ \texttt{PySR} model ($\mathcal L=2.03$). An exponential in $|\vect b|$ has no entry on the Pareto front.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/results/pysr_benchmark.pdf}
-\caption{\texttt{PySR} models ($C=11,14,16,17$) against the data for $\tAmp_{2B}^{\text{Re}}$ at $\eta=6,7,8,10$ ($P_L=-1$, $|\vect b|\ge3a$). The exponential-$\eta$ models $C=14$ and $16$ describe the data most evenly.}
-\label{fig:pysr_benchmark}
+\includegraphics[width=\columnwidth]{figures/fits/03_Exponential_b_StraightLine_Test.pdf}
+\caption{Straight-line test for an exponential decay in $|\vect b|=\sqrt{b^2}$. A profile $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ is a straight line on a logarithmic ordinate. The best fit has $c=0.579$, and over $3\le|\vect b|/a\le8.2$ the exponential describes the data at least as well as the power law.}
+\label{fig:exp_straight}
 \end{figure}
+
+\subsection{Power-law fits with $\eta$-dependent $c$}
+
+Figs.~\ref{fig:powerlaw_etaforms} and~\ref{fig:powerlaw_etaforms_wider} list, for each model, the expression, the fit parameters with their Jackknife-averaged values, $\chi^2/\text{dof}$, the Akaike information criterion and the resulting Fourier transform in $x$. The lattice data accommodate a wide range of asymptotic $\eta\to\infty$ behaviors, corresponding to a wide range of widths of the distributions in $x$. This is why the $\eta$ dependence of $c$ has to be constrained further (Sec.~\ref{sec:eta_dependence}).
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fits/A2BfitFT_eta_Asymptotic_P1_crop.pdf}
+\caption{Three-dimensional Jackknife fits of $\tAmp_{2B}^{\text{Re}}(b_L,b_T,\eta)$ to a family of power-law ansätze, all built on the common baseline $\tAmp_{2B}^{\text{Re}}=a\,e^{-f\eta}\,[1+(c+d)b_L^2+d\,b_T^2]^{-j}$, in which the coefficient $c$ is either constant or one of several $\eta$-dependent forms, $c\to c(\eta)$. The fits use data at $P_L=-1$ with $|\vect b|\ge3a$ and $6\le\eta\le10$.}
+\label{fig:powerlaw_etaforms}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fits/A2Bfit_widerFT_eta_Asymptotic_P1_crop.pdf}
+\caption{As Fig.~\ref{fig:powerlaw_etaforms}, with further $\eta$-dependent forms $c\to c(\eta)$ that give wider Fourier transforms in $x$.}
+\label{fig:powerlaw_etaforms_wider}
+\end{figure*}
+
+\subsection{Fits at individual $\eta$}
+
+With $j=2$ and $a=4$ held fixed, we fitted individual $\eta$ slices sequentially to extract $c(\eta)$ and $d(\eta)$ of Figs.~\ref{fig:c_eta_ReA2B} and~\ref{fig:cd_eta_others}. Fig.~\ref{fig:fixed_eta_slices} gives the results for the three amplitudes.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/results/pysr_gauss_straight.pdf}
-\caption{Straight-line test for a Gaussian profile. The data (black) curve upward away from the best Gaussian fit (red dashed, $c=0.058$) and follow the power law $(1+b^2)^{-1.39}$ (blue).}
-\label{fig:pysr_gauss}
+\includegraphics[width=\columnwidth]{figures/fits/LorentzianFixedA_P-1_b3.pdf}\\[1ex]
+\includegraphics[width=\columnwidth]{figures/fits/LorentzianFixed_ReA12B_P-1_b3.pdf}\\[1ex]
+\includegraphics[width=\columnwidth]{figures/fits/LorentzianFixed_ImA2B_P-1_b3.pdf}
+\caption{Sequential Lorentzian fits at individual $\eta$ slices, for $\tAmp_{2B}^{\text{Re}}$ (top), $\tAmp_{12B}^{\text{Re}}$ (middle) and $\tAmp_{2B}^{\text{Im}}$ (bottom). The first fit holds the global power $j=2$ and the amplitude $a=4$ constant. The values of $\chi^2/\text{dof}$ and the parameters are stable across $\eta$.}
+\label{fig:fixed_eta_slices}
 \end{figure}
-
-\subsection{Exponential and separable models}
-
-An exponential fall-off in $|\vect b|$ describes $\tAmp_{2B}^{\text{Re}}$ alone at least as well as the power law over $3\le|\vect b|/a\le8.2$ (the best fit has $c=0.579$). Exponential decay in $|\vect b|$ is motivated for straight Wilson lines by the heavy-light-meson mass gap~\cite{Ji:2026asym}, a derivation that does not cover staple-shaped links with $b_T\neq0$. We therefore applied four separable ansätze to all three amplitudes with the same $e^{-f\eta}$: a longitudinal profile $e^{-c|P\cdot b|}$ or $e^{-c(P\cdot b)^2}$ times a transverse profile $e^{-d|b|}$ or $(1+db^2)^{-j}$. Table~\ref{tab:separable} compares them with the selected coupled power law. The separable models with exponential longitudinal profile drive the longitudinal coefficient of $\tAmp_{2B}^{\text{Im}}$ and $\tAmp_{12B}^{\text{Re}}$ to zero, the factor $e^{-c|P\cdot b|}$ has a cusp at $P\cdot b=0$ that conflicts with an amplitude odd in $b_L$, and $\tAmp_{2B}^{\text{Im}}$ acquires an unphysical sign. With Gaussian longitudinal profiles the global $\chi^2/\text{dof}$ is poor at the lower momenta. Coupling $(P\cdot b)^2$ and $b^2$ in one denominator, $[1+c\,(P\cdot b)^2/P_L^2+d\,b^2]^{j}$, keeps the amplitude analytic at $P\cdot b=0$ and gives positive, stable parameters for all three amplitudes.
-
-\begin{table}
-\caption{Global $\chi^2/\text{dof}$ of the four separable ansätze and the selected coupled power law at the four momenta, and key parameters at $P_L=-1$.}
-\label{tab:separable}
-\small
-\begin{ruledtabular}
-\begin{tabular}{lcccc}
-Ansatz & $P_L\!=\!-1$ & $-2$ & $-3$ & $-4$ \\
-\hline
-ExpPb\_Expb & $1.406(92)$ & $0.956(75)$ & $0.622(61)$ & $0.455(53)$ \\
-ExpPb\_PowerLawb & $1.286(89)$ & $0.938(75)$ & $0.623(61)$ & $0.447(53)$ \\
-GaussianPb\_Expb & $2.389(121)$ & $2.005(111)$ & $0.945(76)$ & $0.453(52)$ \\
-GaussianPb\_PowerLawb & $2.316(120)$ & $1.981(111)$ & $0.948(76)$ & $0.448(52)$ \\
-Coupled power law & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ \\
-\end{tabular}
-\end{ruledtabular}
-\medskip
-
-\small
-\begin{ruledtabular}
-\begin{tabular}{lccc}
-Ansatz at $P_L=-1$ & $c_{\text{im}}$ & $c_{\text{reA12B}}$ & $a_{\text{im}}$ \\
-\hline
-ExpPb\_Expb & $0.0010(262)$ & $0.045(23)$ & $-0.167(16)$ \\
-ExpPb\_PowerLawb & $0.0045(248)$ & $0.028(24)$ & $-0.167(31)$ \\
-GaussianPb\_Expb & $0.568(171)$ & $0.0038(69)$ & $+0.050(121)$ \\
-GaussianPb\_PowerLawb & $0.602(48)$ & $0.0016(61)$ & $+0.168(92)$ \\
-Coupled power law & $0.2253(69)$ & $0.0773(46)$ & $+0.267(13)$ \\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
-
-\subsection{$\eta$ dependence of the power-law model}
-
-Fitting $\tAmp_{2B}^{\text{Re}}$ at $P_L=-1$ with $a\,e^{-f\eta}[1+(c+d)b_L^2+d\,b_T^2]^{-j}$ and several $\eta$-dependent forms of $c$ gives $\chi^2/\text{dof}\approx1.5$, against unstable or negative $c$ for most Gaussian ansätze. Several $c(\eta)$ forms describe the data equally well and correspond to a wide range of widths in $x$. All of them have $j\approx2$ and $a\approx4$ with the suppression $e^{-0.5\eta}$. We fixed $j=2$ and $a=4$, fitted individual $\eta$ slices, and compared the extracted $c(\eta)$ with ten candidate asymptotic forms. We select $c(\eta)=c\,(1-k_1/\eta-k_2/\eta^2)$ on the physical criteria stated in Sec.~\ref{sec:global_fit}: it has the lowest AIC and $\chi^2/\text{dof}$ among the candidates and suppresses the antiquark region $x\lesssim-0.2$ at higher momentum. For $d$, a linear fit against $\eta$ gives a slope $0.00122(87)$ and $d_0=0.0889(60)$ with $\chi^2/\text{dof}=0.22$.
-
-\subsection{Fit parameters}
-
-Table~\ref{tab:fit_params} gives the parameters of the simultaneous fits with a common $f$, for $|\vect b|\ge3a$ and $6\le\eta\le10$. The amplitudes use Eqs.~\eqref{eq:model_ReA2B}--\eqref{eq:model_ReA12B}.
-
-\begin{table*}
-\caption{Parameters of the simultaneous fits at $P_L=-1,\ldots,-4$. Primed and double-primed symbols refer to $\tAmp_{12B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$.}
-\label{tab:fit_params}
-\begin{ruledtabular}
-\begin{tabular}{lcccc}
- & $P_L=-1$ & $P_L=-2$ & $P_L=-3$ & $P_L=-4$ \\
-\hline
-$a$ & $3.863(11)$ & $3.9833(80)$ & $4.0061(31)$ & $4.0086(15)$ \\
-$c$ & $0.336(40)$ & $0.166(35)$ & $0.45(12)$ & $0.27(21)$ \\
-$d$ & $0.1630(74)$ & $0.1020(46)$ & $0.136(11)$ & $0.122(13)$ \\
-$k_1$ & $12.288(23)$ & $12.305(14)$ & $12.284(11)$ & $12.2751(58)$ \\
-$k_2$ & $-36.1965(45)$ & $-36.1919(27)$ & $-36.1973(19)$ & $-36.19925(89)$ \\
-$j$ & $1.627(25)$ & $2.061(20)$ & $2.085(10)$ & $2.0654(56)$ \\
-\hline
-$a''$ & $0.267(13)$ & $0.368(12)$ & $0.328(11)$ & $0.269(13)$ \\
-$c''$ & $0.2253(69)$ & $0.1346(69)$ & $0.163(15)$ & $0.264(47)$ \\
-$d''$ & $0.2205(66)$ & $0.1305(67)$ & $0.147(13)$ & $0.196(14)$ \\
-$j''$ & $1.108(21)$ & $1.141(20)$ & $1.057(15)$ & $1.0084(79)$ \\
-\hline
-$a'$ & $0.658(22)$ & $0.632(19)$ & $0.569(13)$ & $0.5824(55)$ \\
-$c'$ & $0.0773(46)$ & $0.0769(54)$ & $0.100(17)$ & $0.116(19)$ \\
-$d'$ & $0.0747(43)$ & $0.0741(52)$ & $0.094(16)$ & $0.102(18)$ \\
-$j'$ & $2.0054(90)$ & $2.0141(69)$ & $1.9969(49)$ & $2.0059(34)$ \\
-\hline
-$f$ & $0.4702(46)$ & $0.5357(66)$ & $0.540(15)$ & $0.577(19)$ \\
-\hline
-$\chi^2/\text{dof}$ & $1.85(10)$ & $1.197(85)$ & $0.712(66)$ & $0.434(51)$ \\
-\end{tabular}
-\end{ruledtabular}
-\end{table*}
-
-\section{Distance from a factorized form}
-\label{app:factorization_metric}
-
-For a function $f(x,|\vect b_T|)$ we minimize $J=\int dx\,d|\vect b_T|\,\big(f-g(x)h(|\vect b_T|)\big)^2$ over $g$ and $h$. The stationarity conditions give
-\begin{equation}
-h(|\vect b_T|)=\frac{\int dx\,f\,g}{\int dx\,g^2}\,,\qquad
-g(x)=\frac{\int d|\vect b_T|\,f\,h}{\int d|\vect b_T|\,h^2}\,.
-\end{equation}
-Eliminating $h$ gives a closed equation for $g$, which we solve by iteration from $g=1$ until $g$ and the relative distance $\sqrt{J/N}$, $N=\int dx\,d|\vect b_T|\,f^2$, stop changing within a fixed tolerance. On a discrete grid the integrals become sums, and the iteration is applied to each Jackknife sample of the extrapolated amplitudes. The windows $x\in[0,1]$, $[0.1,0.9]$, $[0.2,0.8]$, $[0.3,0.8]$ test that the result does not depend on the behavior near $x=0$.
-
-Applied to the individual extrapolated amplitudes, the same test gives the relative distances in Table~\ref{tab:fact_amps}. Every amplitude has a nonzero distance in every window, and all of them shrink as the window narrows away from $x=0$, consistent with the Bessel-function behavior near the origin, which differs between amplitudes because of the parameter mismatch described in Sec.~\ref{sec:factorization}.
-
-\begin{table}[H]
-\caption{Relative distance from a factorized form for the extrapolated amplitudes, on the same $|\vect b_T|$ grid and $x$-windows as Table~\ref{tab:fact_sivers}.}
-\label{tab:fact_amps}
-\begin{ruledtabular}
-\begin{tabular}{lcccc}
-Amplitude & $[0,1]$ & $[0.1,0.9]$ & $[0.2,0.8]$ & $[0.3,0.8]$ \\
-\hline
-$\tAmp^{[x]\text{Re}}_{12B}$ & $0.0804(18)$ & $0.0573(26)$ & $0.0397(24)$ & $0.0303(21)$ \\
-$\tAmp^{[x]\text{Re}}_{2B}$ & $0.08138(65)$ & $0.0718(36)$ & $0.0581(55)$ & $0.0478(56)$ \\
-$i\tAmp^{[x]\text{Im}}_{2B}$ & $0.107(18)$ & $0.0868(30)$ & $0.0578(28)$ & $0.0425(23)$ \\
-$\tAmp^{[x]}_{2B}$ & $0.1943(63)$ & $0.0926(59)$ & $0.0594(40)$ & $0.0470(47)$ \\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
+\clearpage
