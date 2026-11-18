@@ -45,20 +45,120 @@
 \date{\today}
 
 \begin{abstract}
-We compute the dependence of the isovector ($u-d$) Sivers shift on the quark longitudinal momentum fraction $x$ in lattice QCD with 2+1 flavors of clover-improved Wilson fermions at a lattice spacing of $a=0.11403$~fm and a pion mass of $m_\pi=317$~MeV. The transverse momentum dependent parton distributions (TMDs) are defined through quark bilinears with staple-shaped Wilson lines. The generalized Sivers shift $\langle k_y\rangle_{TU}=m_N\,\tilde f_{1T}^{\perp(1)}/\tilde f_1^{(0)}$, the ratio of the Sivers TMD to the unpolarized TMD, is obtained from a ratio of Lorentz-invariant amplitudes. To extract the $x$-dependence, we scan the full accessible range of $b\cdot P$, the variable Fourier conjugate to $x$. This requires staples along off-axis lattice directions, which we obtain by interpolation.
+We compute the dependence of the isovector ($u-d$) Sivers shift on the quark longitudinal momentum fraction $x$ in lattice QCD with 2+1 flavors of clover-improved Wilson fermions at a lattice spacing of $a=0.11403$~fm and a pion mass of $m_\pi=317$~MeV. The transverse momentum dependent parton distributions (TMDs) are defined through quark bilinears with staple-shaped Wilson lines. The generalized Sivers shift $\langle k_y\rangle_{TU}=m_N\,\tilde f_{1T}^{\perp(1)}/\tilde f_1^{(0)}$ can be cast as a ratio of the Sivers TMD to the unpolarized TMD, and is obtained from a ratio of Lorentz-invariant amplitudes. To extract the $x$-dependence, we scan the full accessible range of longitudinal separation $b\cdot P$, the variable Fourier conjugate to $x$. This requires staples along off-axis lattice directions, which we obtain by interpolation.
 Using the PySR symbolic regression and statistical modeling, we systematically explored several ans\"atze that satisfy physical constraints, and we describe the amplitudes at four nucleon momenta with a global fit in $b\cdot P$, $b^2$, and the staple length $\eta$. After extrapolation to the light-cone limit $\hat\zeta\to\infty$, the magnitude of the $x$-weighted isovector Sivers shift $x\langle k_y\rangle_{TU}$ at $|\vect{b}_T|=0.34$~fm, for SIDIS/DY, is about $0.006$--$0.011$~GeV for $0.3\le x\le 0.4$. For $0.34\le|\vect{b}_T|\le 0.94$~fm, the isovector Sivers shift is close to, but not exactly, a product of a function of $x$ and a function of $|\vect{b}_T|$, with a relative distance of 6--8\% from the best factorized form.
 \end{abstract}
 
 \maketitle
 
+\section{Introduction}
+\label{sec:intro}
+% TODO(Hari): Introduction intentionally left empty for now.
+
+\section{Construction of TMD Observables}
+\label{sec:construction}
+TMDs are derived from the unsubtracted correlator
+\begin{multline}
+	\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots) \equiv \\ \frac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \Wline{0,\eta v,\eta v+\bvec,\bvec}\ q(\bvec)\ \ket{P,S}\ ,
+	\label{eq-corr}
+\end{multline}
+where ``unsubtr.'' indicates that no ultraviolet or soft divergences have been absorbed into renormalization factors yet. The nucleon states are labeled by momentum $P$ and spin $S$. The tilde denotes position-space correlators, and the same symbol without the tilde denotes their Fourier transforms. The quark fields, separated by $\bvec$, are joined by a staple-shaped gauge connection: two parallel Wilson lines of extent $\eta$ along the direction $v$, closed by a transverse link at the far end~\cite{Musch:2011er}. For $\eta\to+\infty$ and $\eta\to-\infty$ the staple describes the final-state interactions of SIDIS and the initial-state interactions of DY, respectively. In the TMD definition $v$ has no transverse component.
+
+A light-like $v$ leads to rapidity divergences beyond tree level~\cite{Collins:1981uk,Aybat:2011ge}, so we take $v$ off the light cone into the space-like region. The TMDs then depend on the Collins-Soper-type parameter
+\begin{equation}
+	\zetahat \equiv \frac{v \tcdot P}{\sqrt{|v^2|}\,\sqrt{P^2}}\ ,
+	\label{eq-zeta}
+\end{equation}
+which measures how close $v$ is to the light cone. The light-cone limit is $\zetahat\to\infty$. It can be approached even with a purely spatial $v$, as used on the lattice, if $P$ is large.
+
+The correlator~\eqref{eq-corr} contains ultraviolet divergences of the Wilson line as well as soft and collinear divergences. In the continuum these are absorbed into the quark field renormalization and a soft factor $\widetilde{\softf}$, which is built from Wilson lines only and so does not depend on $\Gamma$~\cite{Musch:2011er,Aybat:2011zv,CollinsBook2011}. We do not need its explicit form, since it cancels in the observables below. Analytical studies suggest that for $\bvec^2\neq0$ the renormalization of the nonlocal operator is multiplicative and $\Gamma$-independent~\cite{Musch:2011er,Yoon:2017qzo}. We assume that this carries over to our lattice operator when $|\bvec|$ is larger than a few lattice spacings. The soft factor and the renormalization constants then cancel in ratios of correlators evaluated at the same $\bvec$, $P$, and $\eta v$.
+
+Integrating over the suppressed momentum component $k^-$ sets $b^+=0$. The momentum-space correlator is then
+\begin{widetext}
+\begin{equation}
+	\Phi^{[\Gamma]}(x,\vprp{\kei};P,S;\ldots) = \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+}\ e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}}\,
+		\left. \frac{\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}{\widetilde{\softf}(\bvec^2;\ldots)} \right|_{b^+ = 0} ,
+	\label{eq-corrx}
+\end{equation}
+\end{widetext}
+so that $x$ is conjugate to $\bvec\tcdot P$ and $\vprp{\kei}$ is conjugate to $\vprp{\bvec}$. Scanning the longitudinal separation $\bvec\tcdot P$ therefore gives access to the $x$-dependence~\cite{Hagler:2009mb,Musch:2010ka}.
+
+For $\Gamma=\gamma^+$, which projects onto the leading-twist unpolarized quark distribution, the correlator takes the form~\cite{Ralston:1979ys,Tangerman:1994eh,Mulders:1995dh,Goeke:2005hb}
+\begin{equation}
+	\Phi^{[\gamma^+]}(x,\vprp{\kei};P,S,\ldots) = f_1 - \toddmark{\frac{\myeps_{ij}\, \vect{k}_{i}\, \vect{S}_{j}}{m_N}\ f_{1T}^\prp}\ ,
+	\label{eq-phigammaplus}
+\end{equation}
+where the bracketed term is the naively time-reversal-odd Sivers function~\cite{Sivers:1989cc}. In position space, with $b^+=0$ and $\vprp{v}=\vprp{P}=0$, the same correlator is parametrized by two Lorentz-invariant amplitudes,
+\begin{equation}
+	\frac{1}{2 P^+}\widetilde \Phi^{[\gamma^+]}_{\unsub} = \tAmp_{2B} + i \mN \epsilon_{ij} \vect{\bvec}_i \vect{S}_j\, \tAmp_{12B}\ ,
+	\label{eq-ampgammaplus}
+\end{equation}
+with $i,j\in\{1,2\}$, $\myeps_{12}=1$, and
+\begin{equation}
+	\tAmp_{2B} \equiv \tAmp_2 + R(\zetahat^2)\, \tBmp_1\ , \qquad
+	\tAmp_{12B} \equiv \tAmp_{12} - R(\zetahat^2)\, \tBmp_8\ ,
+	\label{eq-ABamps_sivers}
+\end{equation}
+where $R(\zetahat^2)\equiv 1-\sqrt{1+\zetahat^{-2}}$. The full decomposition and its symmetry constraints are given in Ref.~\cite{Musch:2011er} and Appendix~\ref{app:symmetries}. In this kinematics the amplitudes depend on $\bvec^2$, $\bvec\tcdot P$, $\zetahat$, and $\eta v\tcdot P$. The remaining invariant is not independent, because
+\begin{equation}
+	\frac{v \tcdot \bvec}{v \tcdot P} = \bvec \tcdot P \,\frac{R(\zetahat^2)}{\mN^2}\ ,
+	\label{eq-lindeprel}
+\end{equation}
+and the link directions $\bvec$ and $v$ on the lattice must be chosen to satisfy it~\cite{MuschThesis2,Accardi:2009au}.
+
+Our lattice method evaluates $\widetilde\Phi_\unsub$ in position space, so we state results through the Fourier-transformed TMDs~\cite{Boer:2011xd}
+\begin{align}
+	\tilde f(x, \vprp{\bvec}^2;\ldots) & \equiv \int  d^2 \vprp{\kei} \, e^{i \vprp{\bvec} \cdot \vprp{\kei} }\; \\ & \qquad\times f(x, \vprp{\kei}^2;\ldots)\ , \label{eq-FTMD} \\
+	\tilde f^{(n)}(x, \vprp{\bvec}^2;\ldots ) & \equiv n!\left( -\frac{2}{\mN^2}\partial_{\vprp{\bvec}^2} \right)^n \tilde f(x, \vprp{\bvec}^2;\ldots )\ . \label{eq-dFTMD}
+\end{align}
+For $\vprp{\bvec}\to0$ these reduce to the usual $\vprp{\kei}$-moments, but the first moment of the Sivers function diverges without additional regularization~\cite{Bacchetta:2008xw}. We therefore work at finite $|\vprp{\bvec}|$. Appendix~\ref{app:symmetries} derives
+\begin{widetext}
+\begin{align}
+	\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) & = 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
+	\frac{\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ , \label{eq-xintderfttmds1}\\
+	\tilde f_{1T}^{\perp(1)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) & = -2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
+	\frac{\tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
+	\label{eq-xintderfttmds2}
+\end{align}
+\end{widetext}
+with $\bvec^2=-\vprp{\bvec}^2$ and the remaining amplitude arguments fixed by $\zetahat$ and $\bvec\tcdot P$ through Eq.~\eqref{eq-lindeprel}. The unpolarized distribution is T-even and the Sivers distribution is T-odd, so under $\eta v\tcdot P\to-\eta v\tcdot P$ the first is unchanged and the second changes sign. T-odd TMDs therefore vanish for a straight link ($\eta=0$) and have opposite signs in the SIDIS and DY limits.
+
+The generalized Sivers shift is the ratio of these two Fourier-transformed TMDs,
+\begin{widetext}
+\begin{align}
+	\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
+	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}}
+	= -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}\ .
+	\label{eq-genSivShift}
+\end{align}
+\end{widetext}
+The soft factor drops out of the ratio. In the limit $\vprp{\bvec}^2\to0$ it becomes the familiar Sivers shift, the average transverse momentum in the $y$-direction of unpolarized quarks with longitudinal momentum fraction $x$ in a proton polarized in the $x$-direction. At nonzero $\vprp{\bvec}^2$ the integrals converge, and $\vprp{\bvec}^2$ acts as a regulator.
+
 \section{Lattice Setup}
 \label{sec:setup}
-All results are for the isovector $u-d$ combination on a single $32^3\times96$ ensemble with 2+1 flavors of clover-improved Wilson fermions, generated by the JLab/W\&M collaboration, with $a=0.11403(77)$~fm and $m_\pi=317(2)(2)$~MeV. The ensemble has 968 configurations. On each configuration we compute proton and antiproton propagators from 12 source positions each, together with the corresponding sequential propagators, which gives $968\times24=23232$ measurements. We divide these into blocks of 8 and form 2902 jackknife sets after discarding a few faulty samples. The nucleon mass is $m_N=0.6228(28)/a=1077.8(48)$~MeV. The momentum transfer is zero, and the sink momentum is $\vect{P}=(2\pi/\hat L a)(n,0,0)$ with $n=-1,-2,-3,-4$ and $\hat L=32$. We use $t_{\rm src}=0$ and $t_{\rm snk}=t_{\rm sep}=10$.
-% TODO(Hari): the thesis does not state the smearing of the nucleon source/sink; add it here if it should be reported.
+All results are for the isovector $u-d$ combination on a single $32^3\times96$ ensemble with 2+1 flavors of clover-improved Wilson fermions, generated by the JLab/W\&M collaboration, with $a=0.11403(77)$~fm and $m_\pi=317(2)(2)$~MeV (Table~\ref{tab:lat_setup}). The ensemble has 968 configurations. On each configuration we compute proton and antiproton propagators from 12 source positions each, together with the corresponding sequential propagators, which gives $968\times24=23232$ measurements. We divide these into blocks of 8 and form 2902 jackknife sets after discarding a few faulty samples. The nucleon mass is $m_N=0.6228(28)/a=1077.8(48)$~MeV. The momentum transfer is zero, and the sink momentum is $\vect{P}=(2\pi/\hat L a)(n,0,0)$ with $n=-1,-2,-3,-4$ and $\hat L=32$. We use $t_{\rm src}=0$ and $t_{\rm snk}=t_{\rm sep}=10$.
 
-\section{Formalism}
-\label{sec:formalism}
-\input{sections/formalism}
+\begin{table}[t]
+\caption{Ensemble and measurement parameters. The 24 measurements per configuration are 12 proton and 12 antiproton source and sequential propagators. Momenta are in units of $2\pi/L$ and times in lattice units.}
+\label{tab:lat_setup}
+\begin{ruledtabular}
+\begin{tabular}{ll}
+\multicolumn{2}{c}{\textit{Ensemble}} \\
+Fermion type & Clover ($N_f=2+1$) \\
+Geometry & $32^3\times96$ \\
+$a$ (fm) & $0.11403(77)$ \\
+$m_\pi$ (MeV) & $317(2)(2)$ \\
+$m_N$ & $0.6228(28)/a=1077.8(48)$~MeV \\
+\# confs & 968 \\
+\# meas & $23232$ ($=968\times24$) \\
+\multicolumn{2}{c}{\textit{Kinematics}} \\
+Momentum transfer $\Delta$ & $(0,0,0)$ \\
+Sink momentum $\vect{P}$ & $(-n,0,0)$, $n=1,2,3,4$ \\
+$t_{\rm src}$, $t_{\rm snk}$, $t_{\rm sep}$ & $0$, $10$, $10$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+% TODO(Hari): the thesis does not state the smearing of the nucleon source/sink; add it here if it should be reported.
 
 \section{Amplitudes from Lattice Data}
 \label{sec:amplitudes_lattice}

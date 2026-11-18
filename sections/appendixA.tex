@@ -124,7 +124,18 @@ For the uppercase amplitudes, however, we choose to represent the dependence on 
 The dependence on the Collins-Soper parameter $\hat\zeta$ is given by the fourth argument, $v^2/(v \tcdot P)^2 = - 1 /(\mN\hat\zeta)^2$, 
 while the fifth argument, $\eta v \tcdot P$, characterizes the length of the gauge link and distinguishes between future- and past-pointing
 Wilson lines. 
-With $\tAmp^{[x]}_i$ as defined in Sec.~\ref{sec:amplitudes_tmds}, Eq.~\eqref{eq-fourint} gives $\fourint \tAmp_i = \int \frac{d^2 \vprp{\bvec}'}{(2\pi)^2}\, e^{-i\vprp{\bvec}'\tcdot\vprp{\kei}}\, \tAmp^{[x]}_i(x,\vprp{\bvec}'^2)$. Inserting $f_1 = 2\fourint\tAmp_{2B}$ into Eq.~\eqref{eq-FTMD}, we have for the unpolarized TMD,
+The TMDs follow from the amplitudes through the Fourier integration operator $\fourint$,
+\begin{align}
+	\fourint \tAmp_i \equiv \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2}\,e^{-i\vprp{\bvec}\tcdot\vprp{\kei}}\, \tAmp^{[x]}_i(x,\vprp{\bvec}^2)\,, \label{eq-fourint} \\
+	\tAmp^{[x]}_i(x,\vprp{\bvec}^2) \equiv \frac{1}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)} \int_{-\infty}^{\infty} \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\, \tAmp_{i}\big(\bvec^2,\bvec \tcdot P,\ldots\big)\,, \nonumber
+\end{align}
+and, applied to the combined amplitudes of Eq.~\eqref{eq-ABamps_sivers},
+\begin{align}
+	f_1(x,\vprp{\kei}^2;\zetahat,\ldots,\eta v \tcdot P) & = 2 \fourint\ \tAmp_{2B} \,,\nonumber \\
+	f_{1T}^\perp(x,\vprp{\kei}^2;\zetahat,\ldots,\eta v \tcdot P) & =  4 m_N^2 \partial_{\vprp{\kei}^2} \fourint\ \tAmp_{12B} \ .
+	\label{eq-tmdsfromampsodd}
+\end{align}
+Eq.~\eqref{eq-fourint} gives $\fourint \tAmp_i = \int \frac{d^2 \vprp{\bvec}'}{(2\pi)^2}\, e^{-i\vprp{\bvec}'\tcdot\vprp{\kei}}\, \tAmp^{[x]}_i(x,\vprp{\bvec}'^2)$. Inserting $f_1 = 2\fourint\tAmp_{2B}$ into Eq.~\eqref{eq-FTMD}, we have for the unpolarized TMD,
 \begin{align}
 	\tilde f_1(x,\vprp{\bvec}^2) 
 	&= 2 \int d^2\vprp{\kei}\, e^{i\vprp{\bvec}\tcdot\vprp{\kei}} \int \frac{d^2 \vprp{\bvec}'}{(2\pi)^2}\, e^{-i\vprp{\bvec}'\tcdot\vprp{\kei}}\, \tAmp^{[x]}_{2B}(x,\vprp{\bvec}'^2) 
