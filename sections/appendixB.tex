@@ -6,8 +6,11 @@ Setting the right-hand side of Eq. \eqref{constraints} to zero implies that the 
 \end{equation*}
 must vanish. This fixes the required Collins-Soper parameter, up to a sign, for a given lattice momentum. Using the lattice ensemble parameters from our lattice size of $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and lattice unit of $a=0.11403\text{ fm}$ (pion mass $m_\pi=317\text{ MeV}$), the nucleon mass and the lowest momentum mode are:
 \begin{align}
-    \mN &= \frac{0.6228(28)}{0.11403\text{ fm}} =  \frac{0.6228(28)\times 197.32698 \text{ MeV}}{0.11403} = 1077.8(48)\text{ MeV} \ , \\
-    P_{1}&=-\frac{2\pi}{L}=-\frac{2\pi}{32\times 0.11403\text{ fm}}=-339.8\text{ MeV} \ .
+    \mN &= \frac{0.6228(28)}{0.11403\text{ fm}} \nonumber \\
+    &= \frac{0.6228(28)\times 197.32698 \text{ MeV}}{0.11403} \nonumber \\
+    &= 1077.8(48)\text{ MeV} \ , \\
+    P_{1}&=-\frac{2\pi}{L}=-\frac{2\pi}{32\times 0.11403\text{ fm}} \nonumber \\
+    &=-339.8\text{ MeV} \ .
 \end{align}
 Substituting these values into the constraint equation yields:
 \begin{align}
@@ -268,50 +271,20 @@ To extract the physical Sivers shift from the lattice, we must isolate the speci
 \end{align}
 To evaluate Eq.~\eqref{eq-phitildedecomp}, we project it onto the kinematics chosen for our lattice setup. We choose a frame where the nucleon moves in the negative $\hat{1}$-direction, the spin is polarized along the $\hat{3}$-axis, and the separation and staple vectors lie in the transverse/longitudinal planes. We set $P^{\mu}=(E_N, -|\vec{P}^1|,0,0)$, $b^{\mu}=(0,b_{1},b_{2},0)$, $v^{\mu}=\pm n^{\prime}(0,v_{1},0,v_{3})$, and $S^{\mu}=(0,0,0,1)$. Throughout this derivation, $\bvec^1$ and $\bvec^2$ denote the contravariant components of $\bvec$, so that $\bvec^1=b_L$ and $\bvec^2=b_T$ in this frame. The invariant dot product is $\bvec\cdot\bvec$; it is the quantity written $\bvec^2$ in the arguments of the amplitudes $\tAmp_i(\bvec^2,\ldots)$ and is never a component. Expanding the sum over Lorentz indices for the temporal component ($\mu = 0$) and canceling the terms that vanish (such as $b^0 = 0$, $v^0 = 0$, and $\bvec \tcdot S = 0$), we find %for each $\gamma^{\mu}$:
 \begin{align}
-    \frac{1}{2}\widetilde \Phi^{[\gamma^{0}]}_{\unsub} & = 
-		P^0\, \tAmp_2 - \cancelto{0}{i \mN^2 \bvec^0\, \tAmp_3}
-		- i \mN \underbrace{\epsilon^{0 123}}_{1} |\vec{P}^1| \bvec_2 S_3\, \tAmp_{12} \nonumber \\ &
-		~~+ \cancelto{0}{\frac{\mN^2}{(v \tcdot P)} v^0\, \tBmp_1 }
-		+ \cancelto{0}{\frac{\mN}{v \tcdot P} \epsilon^{0 113} P_1 v_1 S_3\, \tBmp_7  }+ \cancelto{0}{\frac{\mN}{v \tcdot P} \epsilon^{0 133} P_1 v_3 S_3\, \tBmp_7  }
-		 \nonumber \\ &
-		~~- \frac{ i \mN^3}{v \tcdot P} \underbrace{\epsilon^{0 213}}_{-1} \bvec_2 v_1 S_3\, \tBmp_8 - \cancelto{0}{\frac{ i \mN^3}{v \tcdot P}\epsilon^{0 113} \bvec_1 v_1 S_3\, \tBmp_8}- \cancelto{0}{\frac{ i \mN^3}{v \tcdot P}\epsilon^{0 133} \bvec_1 v_3 S_3\, \tBmp_8}- \cancelto{0}{\frac{ i \mN^3}{v \tcdot P}\epsilon^{0 233} \bvec_2 v_3 S_3\, \tBmp_8}\nonumber \\ &
-		~~+ \frac{\mN^3}{v \tcdot P} \cancelto{0}{(\bvec \tcdot S)} \underbrace{\epsilon^{0 123}}_{1} |\vec{P}_1| \bvec_2 v_3\, \tBmp_9- \cancelto{0}{\frac{\mN^3}{v \tcdot P} (\bvec \tcdot S) \epsilon^{0 121} P_1 \bvec_2 v_1\, \tBmp_9}- \cancelto{0}{\frac{\mN^3}{v \tcdot P} (\bvec \tcdot S) \epsilon^{0 113} P_1 \bvec_1 v_3\, \tBmp_9} \nonumber \\ &
-        - \cancelto{0}{\frac{\mN^3}{v \tcdot P} (\bvec \tcdot S) \epsilon^{0 111} P_1 \bvec_1 v_1\, \tBmp_9} - \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \underbrace{\epsilon^{0 123}}_{1} |\vec{P}_1| \bvec_2 v_3 \tBmp_{10}
-		- \cancelto{0}{\frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{0 121} P_1 \bvec_2 v_1 \tBmp_{10}} \nonumber \\ &
-        - \cancelto{0}{\frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{0 111} P_1 \bvec_1 v_1 \tBmp_{10}} - \cancelto{0}{\frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{0 113} P_1 \bvec_1 v_3 \tBmp_{10}}\\
    \frac{1}{2}\widetilde \Phi^{[\gamma^{0}]}_{\unsub}& = P^0\, \tAmp_2  - i \mN  |\vec{P}^1| \bvec_2 S_3\, \tAmp_{12}+ \frac{ i \mN^3}{v \tcdot P}  \bvec_2 v_1 S_3\, \tBmp_8- \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S)  |P_1| \bvec_2 v_3 \tBmp_{10}
 \end{align}
 Repeating this tensor contraction for the longitudinal spatial component ($\mu = 1$), taking care to track the signs of the Levi-Civita symbol, yields:
 \begin{align}
-    \frac{1}{2}\widetilde \Phi^{[\gamma^{1}]}_{\unsub} & = 
-		-|\vec{P}^1|\, \tAmp_2 - i \mN^2 \bvec^1\, \tAmp_3
-		- i \mN \underbrace{\epsilon^{1 023}}_{-1} P_0 \bvec_2 S_3\, \tAmp_{12} \nonumber \\ &
-		~~+ \frac{\mN^2}{(v \tcdot P)} v^1\, \tBmp_1 
-		+ \cancelto{0}{\frac{\mN}{v \tcdot P} \epsilon^{1 013} P_0 v_1 S_3\, \tBmp_7  }+ \cancelto{0}{\frac{\mN}{v \tcdot P} \epsilon^{1 033} P_0 v_3 S_3\, \tBmp_7  } \nonumber \\ &
-		- \cancelto{0}{\frac{ i \mN^3}{v \tcdot P} \epsilon^{1 213} \bvec_2 v_1 S_3\, \tBmp_8}- \cancelto{0}{\frac{ i \mN^3}{v \tcdot P} \epsilon^{1 233} \bvec_2 v_3 S_3\, \tBmp_8} - \cancelto{0}{\frac{ i \mN^3}{v \tcdot P} \epsilon^{1 133} \bvec_1 v_3 S_3\, \tBmp_8}- \cancelto{0}{\frac{ i \mN^3}{v \tcdot P} \epsilon^{1 113} \bvec_1 v_1 S_3\, \tBmp_8}\nonumber \\ & 
-        - \frac{\mN^3}{v \tcdot P} \cancelto{0}{(\bvec \tcdot S)} \underbrace{\epsilon^{1 023}}_{1} P_0 \bvec_2 v_3\, \tBmp_9 - \cancelto{0}{\frac{\mN^3}{v \tcdot P} (\bvec \tcdot S) \epsilon^{1 021} P_0 \bvec_2 v_1\, \tBmp_9} - \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \underbrace{\epsilon^{1 023}}_{-1} P_0 \bvec_2 v_3 \tBmp_{10} \nonumber \\ & - \cancelto{0}{\frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \epsilon^{1 021} P_0 \bvec_2 v_1 \tBmp_{10}}\\
    \frac{1}{2}\widetilde \Phi^{[\gamma^{1}]}_{\unsub} & =-|\vec{P}^1|\, \tAmp_2+ \frac{\mN^2}{(v \tcdot P)} v^1\, \tBmp_1 
 		+ i \mN  P_0 \bvec_2 S_3\, \tAmp_{12}+ \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S)  P_0 \bvec_2 v_3 \tBmp_{10}- i \mN^2 \bvec^1\, \tAmp_3
 \end{align}
 Evaluating the transverse component ($\mu=2$) isolates terms that depend on $P_0$ and the longitudinal separation $b_1$:
 \begin{align}
-    \frac{1}{2}\widetilde \Phi^{[\gamma^2]}_{\unsub} & = 
-		 - i \mN^2 \bvec^2\, \tAmp_3
-		- i \mN \underbrace{\epsilon^{2 0 1 3}}_{1} P_0 \bvec_1 S_3\, \tAmp_{12} \nonumber \\ &
-		~~
-		+ \frac{\mN}{v \tcdot P} \underbrace{\epsilon^{2 0 1 3}}_{1} P_0 v_1 S_3\, \tBmp_7  
-		 \nonumber \\ &
-		~~
-		- \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \underbrace{\epsilon^{2 0 1 3}}_{1} P_0 \bvec_1 v_3 \tBmp_{10}\\
   \frac{1}{2}\widetilde \Phi^{[\gamma^2]}_{\unsub} & =- i \mN^2 \bvec^2\, \tAmp_3
 		- i \mN  P_0 \bvec_1 S_3\, \tAmp_{12}+ \frac{\mN}{v \tcdot P}  P_0 v_1 S_3\, \tBmp_7- \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) P_0 \bvec_1 v_3 \tBmp_{10}
 \end{align}
 Finally, the orthogonal transverse component ($\mu=3$) simplifies because of the alignment of the spin vector:
 \begin{align}
-    \frac{1}{2}\widetilde \Phi^{[\gamma^3]}_{\unsub} & = \frac{\mN^2}{(v \tcdot P)} v^3\, \tBmp_1 
-		\nonumber \\ &
-		~~
-		- \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S) \underbrace{\epsilon^{3 0 2 1}}_{1} P_0 \bvec_2 v_1 \tBmp_{10}\\
   \frac{1}{2}\widetilde \Phi^{[\gamma^3]}_{\unsub}& = \frac{\mN^2}{(v \tcdot P)} v^3\, \tBmp_1- \frac{i \mN^3}{(v \tcdot P)^2} (v \tcdot S)  P_0 \bvec_2 v_1 \tBmp_{10}
 \end{align}
 Collecting these results gives the full system of equations mapping the infinite-link continuous amplitudes to the projected correlator components:

@@ -67,6 +67,19 @@
 \includegraphics[width=0.75\textwidth]{figures/amps/ImA12B_Pb_bsq_eta8_PL#1_2D.pdf}
 \end{tabular}}
 
+% Left panel only (b_L on the horizontal axis, color = b_T) of the two-panel amplitude plots.
+% #1 = file stem, #2 = per-mille of the file width at which the left panel ends.
+\newsavebox{\ampbox}
+\newcommand{\ampleft}[2]{%
+\sbox{\ampbox}{\includegraphics{figures/amps/#1.pdf}}%
+\includegraphics[trim=0 0 {\dimexpr\wd\ampbox*(1000-#2)/1000\relax} 0,clip,width=0.48\textwidth]{figures/amps/#1.pdf}}
+\newcommand{\ampgridBLBTthreeD}[1]{%
+\ampleft{ReA2B_PL#1_3D}{498}\hfill\ampleft{ImA2B_PL#1_3D}{498}\\[1.5ex]
+\ampleft{ReA12B_PL#1_3D}{498}\hfill\ampleft{ImA12B_PL#1_3D}{498}}
+\newcommand{\ampgridBLBTeta}[1]{%
+\ampleft{ReA2B_eta8_PL#1_2D}{499}\hfill\ampleft{ImA2B_eta8_PL#1_2D}{499}\\[1.5ex]
+\ampleft{ReA12B_eta8_PL#1_2D}{499}\hfill\ampleft{ImA12B_eta8_PL#1_2D}{499}}
+
 % Fit plots (data points and fitted surfaces), thesis layout: Re A_2B, Im A_2B, Re A_12B stacked. #1 = P_L value.
 \newcommand{\fitstackBLBTthreeD}[1]{%
 \begin{tabular}{c}
