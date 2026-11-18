@@ -5,6 +5,7 @@
 \usepackage{braket}
 \usepackage{cancel}
 \usepackage{xcolor}
+\usepackage{float}
 
 % Macros carried over from the thesis
 \providecommand{\texorpdfstring}[2]{#1}
@@ -74,13 +75,11 @@ which measures how close $v$ is to the light cone. The light-cone limit is $\zet
 The correlator~\eqref{eq-corr} contains ultraviolet divergences of the Wilson line as well as soft and collinear divergences. In the continuum these are absorbed into the quark field renormalization and a soft factor $\widetilde{\softf}$, which is built from Wilson lines only and so does not depend on $\Gamma$~\cite{Musch:2011er,Aybat:2011zv,CollinsBook2011}. We do not need its explicit form, since it cancels in the observables below. Analytical studies suggest that for $\bvec^2\neq0$ the renormalization of the nonlocal operator is multiplicative and $\Gamma$-independent~\cite{Musch:2011er,Yoon:2017qzo}. We assume that this carries over to our lattice operator when $|\bvec|$ is larger than a few lattice spacings. The soft factor and the renormalization constants then cancel in ratios of correlators evaluated at the same $\bvec$, $P$, and $\eta v$.
 
 Integrating over the suppressed momentum component $k^-$ sets $b^+=0$. The momentum-space correlator is then
-\begin{widetext}
-\begin{equation}
-	\Phi^{[\Gamma]}(x,\vprp{\kei};P,S;\ldots) = \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+}\ e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}}\,
-		\left. \frac{\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}{\widetilde{\softf}(\bvec^2;\ldots)} \right|_{b^+ = 0} ,
+\begin{multline}
+	\Phi^{[\Gamma]}(x,\vprp{\kei};P,S;\ldots) = \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+} \\
+		\times e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}} \left. \frac{\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}{\widetilde{\softf}(\bvec^2;\ldots)} \right|_{b^+ = 0} ,
 	\label{eq-corrx}
-\end{equation}
-\end{widetext}
+\end{multline}
 so that $x$ is conjugate to $\bvec\tcdot P$ and $\vprp{\kei}$ is conjugate to $\vprp{\bvec}$. Scanning the longitudinal separation $\bvec\tcdot P$ therefore gives access to the $x$-dependence~\cite{Hagler:2009mb,Musch:2010ka}.
 
 For $\Gamma=\gamma^+$, which projects onto the leading-twist unpolarized quark distribution, the correlator takes the form~\cite{Ralston:1979ys,Tangerman:1994eh,Mulders:1995dh,Goeke:2005hb}
@@ -112,33 +111,32 @@ Our lattice method evaluates $\widetilde\Phi_\unsub$ in position space, so we st
 	\tilde f^{(n)}(x, \vprp{\bvec}^2;\ldots ) & \equiv n!\left( -\frac{2}{\mN^2}\partial_{\vprp{\bvec}^2} \right)^n \tilde f(x, \vprp{\bvec}^2;\ldots )\ . \label{eq-dFTMD}
 \end{align}
 For $\vprp{\bvec}\to0$ these reduce to the usual $\vprp{\kei}$-moments, but the first moment of the Sivers function diverges without additional regularization~\cite{Bacchetta:2008xw}. We therefore work at finite $|\vprp{\bvec}|$. Appendix~\ref{app:symmetries} derives
-\begin{widetext}
-\begin{align}
-	\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) & = 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
-	\frac{\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ , \label{eq-xintderfttmds1}\\
-	\tilde f_{1T}^{\perp(1)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) & = -2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
+\begin{multline}
+	\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \\ 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
+	\frac{\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
+	\label{eq-xintderfttmds1}
+\end{multline}
+\begin{multline}
+	\tilde f_{1T}^{\perp(1)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \\ -2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
 	\frac{\tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
 	\label{eq-xintderfttmds2}
-\end{align}
-\end{widetext}
+\end{multline}
 with $\bvec^2=-\vprp{\bvec}^2$ and the remaining amplitude arguments fixed by $\zetahat$ and $\bvec\tcdot P$ through Eq.~\eqref{eq-lindeprel}. The unpolarized distribution is T-even and the Sivers distribution is T-odd, so under $\eta v\tcdot P\to-\eta v\tcdot P$ the first is unchanged and the second changes sign. T-odd TMDs therefore vanish for a straight link ($\eta=0$) and have opposite signs in the SIDIS and DY limits.
 
 The generalized Sivers shift is the ratio of these two Fourier-transformed TMDs,
-\begin{widetext}
-\begin{align}
+\begin{multline}
 	\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
-	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}}
+	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}} \\
 	= -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}\ .
 	\label{eq-genSivShift}
-\end{align}
-\end{widetext}
+\end{multline}
 The soft factor drops out of the ratio. In the limit $\vprp{\bvec}^2\to0$ it becomes the familiar Sivers shift, the average transverse momentum in the $y$-direction of unpolarized quarks with longitudinal momentum fraction $x$ in a proton polarized in the $x$-direction. At nonzero $\vprp{\bvec}^2$ the integrals converge, and $\vprp{\bvec}^2$ acts as a regulator.
 
 \section{Lattice Setup}
 \label{sec:setup}
 All results are for the isovector $u-d$ combination on a single $32^3\times96$ ensemble with 2+1 flavors of clover-improved Wilson fermions, generated by the JLab/W\&M collaboration, with $a=0.11403(77)$~fm and $m_\pi=317(2)(2)$~MeV (Table~\ref{tab:lat_setup}). The ensemble has 968 configurations. On each configuration we compute proton and antiproton propagators from 12 source positions each, together with the corresponding sequential propagators, which gives $968\times24=23232$ measurements. We divide these into blocks of 8 and form 2902 jackknife sets after discarding a few faulty samples. The nucleon mass is $m_N=0.6228(28)/a=1077.8(48)$~MeV. The momentum transfer is zero, and the sink momentum is $\vect{P}=(2\pi/\hat L a)(n,0,0)$ with $n=-1,-2,-3,-4$ and $\hat L=32$. We use $t_{\rm src}=0$ and $t_{\rm snk}=t_{\rm sep}=10$.
 
-\begin{table}[t]
+\begin{table}[H]
 \caption{Ensemble and measurement parameters. The 24 measurements per configuration are 12 proton and 12 antiproton source and sequential propagators. Momenta are in units of $2\pi/L$ and times in lattice units.}
 \label{tab:lat_setup}
 \begin{ruledtabular}
