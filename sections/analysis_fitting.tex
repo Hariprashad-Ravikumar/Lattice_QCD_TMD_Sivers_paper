@@ -157,7 +157,7 @@ The final models are
 \end{align}
 The choice of $c(\eta)$ for $\tAmp_{2B}^{\text{Re}}$ among candidates with equal $\chi^2/\text{dof}$ combines the fit quality with two physical requirements: the antiquark region $x\lesssim-0.2$ of $\tilde f_1^{(0)}=2\tAmp_{2B}^{[x]}$ must be suppressed, which involves both $\tAmp_{2B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$, and the $x$-integrated results must agree with earlier first-moment calculations~\cite{Musch:2011er,Yoon:2017qzo}.
 
-Since $e^{-f\eta}$ does not depend on $P\cdot b$, it cancels between numerator and denominator of the Sivers shift, Eq.~\eqref{eq:sivers_shift_xdep}, when it is shared by the three amplitudes. We therefore fit the three amplitudes simultaneously at each momentum with one common $f$, minimizing the correlated $\chi^2=\sum_{ij}(\bar y_i-F_i)C^{-1}_{ij}(\bar y_j-F_j)$ with the full Jackknife covariance matrix $C_{ij}$~\cite{Boram2011Covariance}, which includes correlations between different $(b_L,b_T,\eta)$ points and between the three amplitudes. The fits use \texttt{lsqfit}~\cite{Lepage:2001ym}. The global $\chi^2/\text{dof}$ is $1.85(10)$, $1.197(85)$, $0.712(66)$ and $0.434(51)$ for $P_L=-1,\ldots,-4$.
+Since $e^{-f\eta}$ does not depend on $P\cdot b$, it cancels between numerator and denominator of the Sivers shift, Eq.~\eqref{eq:sivers_shift_xdep}, when it is shared by the three amplitudes. We therefore fit the three amplitudes simultaneously at each momentum with one common $f$, minimizing the correlated $\chi^2$ with the full Jackknife covariance matrix~\cite{Boram2011Covariance}, which includes correlations between different $(b_L,b_T,\eta)$ points and between the three amplitudes. We use \texttt{lsqfit}~\cite{Lepage:2001ym}. The global $\chi^2/\text{dof}$ is $1.85(10)$, $1.197(85)$, $0.712(66)$ and $0.434(51)$ for $P_L=-1,\ldots,-4$.
 
 \begin{table}
 \caption{Parameters of the simultaneous fit at $P_L=-1$ ($|\vect b|\ge3a$, $6\le\eta\le10$) with a common $f$. Global $\chi^2/\text{dof}=1.85(10)$. The parameters of $\tAmp_{2B}^{\text{Im}}$ are $a'',c'',d'',j''$ and those of $\tAmp_{12B}^{\text{Re}}$ are $a',c',d',j'$ in Eqs.~\eqref{eq:model_ImA2B} and~\eqref{eq:model_ReA12B}.}
@@ -178,7 +178,7 @@ $f$ & \multicolumn{3}{c}{$0.4702(46)$ (common)} \\
 \end{ruledtabular}
 \end{table}
 
-Table~\ref{tab:fit_params_P1} gives the parameters at $P_L=-1$, and Figs.~\ref{fig:fit3D_P1} and~\ref{fig:fit_eta8_P1} compare the fit with the data in the $(b_L,b_T,\eta)$ space and at fixed $\eta|\vect v|/a=8$. Fig.~\ref{fig:ft_xdep_P1} shows the $x$ dependence at $b^2=9a^2$ obtained from the Fourier transform of the fitted amplitudes over $P\cdot b$. The other momenta and the $(P\cdot b,b^2)$ space are in Appendix~\ref{app:fit_results}.
+Table~\ref{tab:fit_params_P1} gives the parameters at $P_L=-1$, and Figs.~\ref{fig:fit3D_P1} and~\ref{fig:fit_eta8_P1} compare the fit with the data. Fig.~\ref{fig:ft_xdep_P1} shows the $x$ dependence at $b^2=9a^2$ obtained from the Fourier transform of the fitted amplitudes over $P\cdot b$. The other momenta are in Appendix~\ref{app:fit_results}.
 
 
 \begin{figure*}[p]
