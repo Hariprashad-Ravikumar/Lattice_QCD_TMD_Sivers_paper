@@ -1,0 +1,60 @@
+\documentclass[aps,prd,twocolumn,amsmath,amssymb,floatfix]{revtex4-2}
+
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{xcolor}
+
+% Macros carried over from the paper
+\newcommand{\tAmp}{\widetilde{A}}
+\newcommand{\vect}[1]{\ensuremath{\boldsymbol{#1}}}
+
+% Imaginary-part amplitude plots in the thesis layout: A_2B on top, A_12B below,
+% each as two coordinate choices. #1 = P_L value (e.g. -1)
+\newcommand{\ampstackImThreeD}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA2B_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA2B_Pb_bsq_PL#1_3D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA12B_PL#1_3D.pdf}\\
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA12B_Pb_bsq_PL#1_3D.pdf}
+\end{tabular}}
+\newcommand{\ampstackImEta}[1]{%
+\begin{tabular}{c}
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA2B_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA2B_Pb_bsq_eta8_PL#1_2D.pdf}\\[2ex]
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA12B_eta8_PL#1_2D.pdf}\\
+\includegraphics[width=0.75\textwidth]{../figures/amps/ImA12B_Pb_bsq_eta8_PL#1_2D.pdf}
+\end{tabular}}
+
+% #1 = P_L value, #2 = zeta-hat, #3 = label suffix, #4 = note on the A_12B signal
+\newcommand{\imfigset}[4]{%
+\begin{figure*}[p]
+\centering
+\ampstackImThreeD{#1}
+\caption{Imaginary parts of the $\tAmp_{2B}$ (top 2 rows) and $\tAmp_{12B}$ (bottom 2 rows) amplitudes for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat\zeta=#2$). The first row of each 2-row block displays the $(b_{L}/a,b_{T}/a,\eta|\vect{v}|/a)$ space, while the second row of each 2-row block displays the $((\vect{P}\cdot \vect{b})\cdot\hat{L}/(2\pi),b^{2}/a^2,\eta|\vect{v}|/a)$ space.}
+\label{fig:Im_3D_#3}
+\end{figure*}
+\begin{figure*}[p]
+\centering
+\ampstackImEta{#1}
+\caption{Imaginary parts of the $\tAmp_{2B}$ (top 2 rows) and $\tAmp_{12B}$ (bottom 2 rows) amplitudes for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat\zeta=#2$) at fixed $\eta|\vect{v}|/a=8$. The first row of each 2-row block displays the $(b_{L}/a,b_{T}/a)$ space, while the second row of each 2-row block displays the $((\vect{P}\cdot \vect{b})\cdot\hat{L}/(2\pi),b^{2}/a^2)$ space. #4}
+\label{fig:Im_eta8_#3}
+\end{figure*}}
+
+\begin{document}
+
+\title{Supplemental Material: Dependence of the Sivers TMD Shift on Quark Longitudinal Momentum Fraction $x$ from Lattice QCD}
+
+\author{Hariprashad Ravikumar}
+\author{Michael Engelhardt}
+\affiliation{Department of Physics, New Mexico State University, Las Cruces, NM 88003, USA}
+
+\maketitle
+
+This Supplemental Material shows the imaginary parts of the extracted amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ at the four simulated momenta, $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$, $\{-2,0,0\}$, $\{-3,0,0\}$ and $\{-4,0,0\}$, corresponding to $\hat\zeta=0.090772$, $0.294367$, $0.539684$ and $0.785756$. For each momentum, the amplitudes are plotted first in the discrete $(b_L/a,b_T/a,\eta|\vect{v}|/a)$ lattice grid and in the Lorentz-invariant $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2,\eta|\vect{v}|/a)$ space, and then at fixed $\eta|\vect{v}|/a=8$. The real parts are shown in the main text and in its appendix on the remaining momenta. No signal is discernible in $\tAmp_{12B}^{\text{Im}}$ at any momentum.
+
+\imfigset{-1}{0.090772}{P1}{Notice the lack of discernible signal in $\tAmp_{12B}^{\text{Im}}$.}
+\imfigset{-2}{0.294367}{P2}{}
+\imfigset{-3}{0.539684}{P3}{}
+\imfigset{-4}{0.785756}{P4}{}
+
+\end{document}

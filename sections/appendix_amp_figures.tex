@@ -1,32 +1,20 @@
 \section{Amplitudes at the remaining momenta}
 \label{app:amps}
-Section~\ref{sec:amplitudes_lattice} shows the extracted amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ at the smallest simulated momentum, $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ (Figs.~\ref{fig:A2B_3D_P1}--\ref{fig:A12B_eta8_P1}). This appendix gives the same four figures at the three larger momenta, $\vect{P}\cdot a\hat{L}/(2\pi)=\{-2,0,0\}$, $\{-3,0,0\}$ and $\{-4,0,0\}$, with $\hat\zeta=0.294367$, $0.539684$ and $0.785756$. In each case the amplitudes are plotted first in the discrete $(b_L/a,b_T/a,\eta|\vect{v}|/a)$ lattice grid and in the Lorentz-invariant $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2,\eta|\vect{v}|/a)$ space, and then at fixed $\eta|\vect{v}|/a=8$.
+This appendix shows the real parts of the amplitudes at the three larger momenta, in the same format as Figs.~\ref{fig:Re_3D_P1} and~\ref{fig:Re_eta8_P1}. The imaginary parts are in the Supplemental Material.
 
 % #1 = P_L value, #2 = zeta-hat, #3 = label suffix
 \newcommand{\ampappendixset}[3]{%
 \begin{figure*}[p]
 \centering
-\ampstackthreeD{2B}{#1}
-\caption{Same as Fig.~\ref{fig:A2B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A2B_3D_#3}
+\ampstackReThreeD{#1}
+\caption{Same as Fig.~\ref{fig:Re_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:Re_3D_#3}
 \end{figure*}
 \begin{figure*}[p]
 \centering
-\ampstackthreeD{12B}{#1}
-\caption{Same as Fig.~\ref{fig:A12B_3D_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A12B_3D_#3}
-\end{figure*}
-\begin{figure*}[p]
-\centering
-\ampstacketa{2B}{#1}
-\caption{Same as Fig.~\ref{fig:A2B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A2B_eta8_#3}
-\end{figure*}
-\begin{figure*}[p]
-\centering
-\ampstacketa{12B}{#1}
-\caption{Same as Fig.~\ref{fig:A12B_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
-\label{fig:A12B_eta8_#3}
+\ampstackReEta{#1}
+\caption{Same as Fig.~\ref{fig:Re_eta8_P1}, but for $\vect{P}\cdot a\hat{L}/(2\pi)=\{#1,0,0\}$ ($\hat{\zeta}=#2$).}
+\label{fig:Re_eta8_#3}
 \end{figure*}}
 
 \ampappendixset{-2}{0.294367}{P2}
