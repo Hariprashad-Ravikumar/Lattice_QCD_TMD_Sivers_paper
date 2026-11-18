@@ -106,10 +106,12 @@ where $R(\zetahat^2)\equiv 1-\sqrt{1+\zetahat^{-2}}$. The full decomposition and
 and the link directions $\bvec$ and $v$ on the lattice must be chosen to satisfy it~\cite{MuschThesis2,Accardi:2009au}.
 
 Our lattice method evaluates $\widetilde\Phi_\unsub$ in position space, so we state results through the Fourier-transformed TMDs~\cite{Boer:2011xd}
-\begin{align}
-	\tilde f(x, \vprp{\bvec}^2;\ldots) & \equiv \int  d^2 \vprp{\kei} \, e^{i \vprp{\bvec} \cdot \vprp{\kei} }\; \\ & \qquad\times f(x, \vprp{\kei}^2;\ldots)\ , \label{eq-FTMD} \\
-	\tilde f^{(n)}(x, \vprp{\bvec}^2;\ldots ) & \equiv n!\left( -\frac{2}{\mN^2}\partial_{\vprp{\bvec}^2} \right)^n \tilde f(x, \vprp{\bvec}^2;\ldots )\ . \label{eq-dFTMD}
-\end{align}
+\begin{multline}
+	\tilde f(x, \vprp{\bvec}^2;\ldots) \equiv \int  d^2 \vprp{\kei} \, e^{i \vprp{\bvec} \cdot \vprp{\kei} } \\ \times f(x, \vprp{\kei}^2;\ldots)\ , \label{eq-FTMD}
+\end{multline}
+\begin{equation}
+	\tilde f^{(n)}(x, \vprp{\bvec}^2;\ldots ) \equiv n!\left( -\frac{2}{\mN^2}\partial_{\vprp{\bvec}^2} \right)^n \tilde f(x, \vprp{\bvec}^2;\ldots )\ . \label{eq-dFTMD}
+\end{equation}
 For $\vprp{\bvec}\to0$ these reduce to the usual $\vprp{\kei}$-moments, but the first moment of the Sivers function diverges without additional regularization~\cite{Bacchetta:2008xw}. We therefore work at finite $|\vprp{\bvec}|$. Appendix~\ref{app:symmetries} derives
 \begin{multline}
 	\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \\ 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
