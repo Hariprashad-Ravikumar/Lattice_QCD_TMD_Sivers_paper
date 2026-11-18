@@ -1,12 +1,12 @@
 
 Because $x$ and the longitudinal spatial separation $b \cdot P$ are Fourier conjugate variables, mapping the $x$-dependence requires a Fourier transform of these amplitudes with respect to $b \cdot P$. Analytically, the $x$-dependent Sivers shift takes the form:
-\begin{multline}
-	\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
-	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}} \\
-	= -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)} \\
-	= -\mN \frac{\tAmp_{12B}^{[x]\text{Re}}(\bvec^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{12B}^{[x]\text{Im}}(\bvec^2,x,\zetahat,\eta v \tcdot P)}{\tAmp_{2B}^{[x]\text{Re}}(\bvec^2,x,\zetahat,\eta v \tcdot P)-\tAmp_{2B}^{[x]\text{Im}}(\bvec^2,x,\zetahat,\eta v \tcdot P)}\ .
+\begin{align}
+	&\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
+	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}} \nonumber \\
+	&\quad = -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\cdots)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\cdots)} \nonumber \\
+	&\quad = -\mN \frac{\tAmp_{12B}^{[x]\text{Re}}(\cdots)-\tAmp_{12B}^{[x]\text{Im}}(\cdots)}{\tAmp_{2B}^{[x]\text{Re}}(\cdots)-\tAmp_{2B}^{[x]\text{Im}}(\cdots)}\ .
 	\label{eq:sivers_shift_xdep}
-\end{multline}
+\end{align}
  Expanding the Fourier phase factor into its trigonometric components isolates the real and imaginary contributions of the amplitudes to the Sivers shift. Because the integration over $d(b \cdot P)$ is performed over a symmetric domain, the non-vanishing terms of the integral are dictated by the parity of the integrands with respect to $b \cdot P$. The trigonometric weights $\cos\left(x(b\cdot P)\right)$ and $\sin\left(x(b\cdot P)\right)$ are even and odd, respectively.
 
 This harmonic symmetry filters the invariant amplitudes based on their behavior under Hermitian conjugation. By Eqs.~\eqref{conditi_hermitian} and~\eqref{eq-ReIm-parity}, the real components $\tAmp_{2B}^{\text{Re}}$ and $\tAmp_{12B}^{\text{Re}}$ are even functions of $b \cdot P$, while the imaginary components $\tAmp_{2B}^{\text{Im}}$ and $\tAmp_{12B}^{\text{Im}}$ are odd. (Parity in $b$ is parity in $b\cdot P$ here, because $\bvec^2$ is unchanged under $b\to-b$, $v\cdot b$ is tied to $b\cdot P$ by Eq.~\eqref{eq-lindeprel}, and $R(\zetahat^2)$ is real.) Only the symmetric products therefore survive the integration, i.e., the even real amplitudes coupled with the cosine term and the odd imaginary amplitudes coupled with the sine term. Here, $\tAmp_{iB}^{[x]\text{Re}}$ and $\tAmp_{iB}^{[x]\text{Im}}$ are the Fourier-transformed amplitudes. Note that, since $\tAmp_{iB}^{\text{Im}}$ is odd in $(P\cdot b)$, its Fourier transform gives an imaginary solution, i. e. $\int \frac{d(\bvec \tcdot P)}{2\pi}e^{ix(b\cdot P)}\tAmp_{iB}^{\text{Im}}=i\tAmp_{iB}^{[x]\text{Im}}$, this results in
@@ -133,7 +133,7 @@ Recalling that $v \tcdot P = v_1 P^1 = v^1 |P^1|$ in our chosen frame, each ampl
 \begin{align}
     \tAmp^{\text{Re}}_2 = & \frac{1}{2}\text{Re}\{ R_{\Gamma(8)}\}^{[b^{1}\text{-even}]} \\
     \tBmp^{\text{Re}}_1 = & \frac{E_{N}|P^1|v^1}{2\mN^2 v^3} \nonumber \\
-    & \times \text{Im}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-even}]} \\
+    & \qquad \times \text{Im}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-even}]} \\
     \tAmp^{\text{Re}}_{12} = & \frac{-1}{2\mN \bvec^2}\Big[\text{Re}\{ R_{\Gamma(1)}\}^{[b^{1}\text{-even}]} \nonumber \\
     & \qquad +\frac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-even}]}\Big] \\
     \tBmp^{\text{Re}}_8 = & \frac{-E_N|P^1|}{2\mN^3 \bvec^2}\Big[\text{Im}\{ R_{\Gamma(8)}\}^{[b^{1}\text{-even}]} \nonumber \\
@@ -144,7 +144,7 @@ Applying the same scaling factors to the imaginary counterparts provides the com
 \begin{align}
     \tAmp^{\text{Im}}_2 = & \frac{1}{2}\text{Im}\{ R_{\Gamma(8)}\}^{[b^{1}\text{-odd}]} \\
     \tBmp^{\text{Im}}_1 = & \frac{-E_{N}|P^1|v^1}{2\mN^2 v^3} \nonumber \\
-    & \times \text{Re}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-odd}]} \\
+    & \qquad \times \text{Re}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-odd}]} \\
     \tAmp^{\text{Im}}_{12} = & \frac{-1}{2\mN \bvec^2}\Big[\text{Im}\{ R_{\Gamma(1)}\}^{[b^{1}\text{-odd}]} \nonumber \\
     & \qquad +\frac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{[b^{1}\text{-odd}]}\Big] \\
     \tBmp^{\text{Im}}_8 = & \frac{E_N|P^1|}{2\mN^3 \bvec^2}\Big[\text{Re}\{ R_{\Gamma(8)}\}^{[b^{1}\text{-odd}]} \nonumber \\
@@ -164,14 +164,16 @@ We begin with the defining linear combination for the unpolarized amplitude, $\t
 \end{align}
 
 Substituting the parity-projected lattice ratio observables introduced above (and applying our $b_L, P_L$ geometric mapping), we obtain the real part of $\tAmp_{2B}$ as an expression computable directly from our grid coordinates:
-\begin{multline}
-    \tAmp_{2B}^{\text{Re}}(b_L, b_T, \hat{\zeta}) = \frac{1}{2}\text{Re}\{ R_{\Gamma(8)}\}^{[b_L\text{-even}]} \\ + R(\zetahat^2) \frac{E_{N}|P_L|v^1}{2\mN^2 v^3} \text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]}
-\end{multline}
+\begin{align}
+    &\tAmp_{2B}^{\text{Re}}(b_L, b_T, \hat{\zeta}) = \frac{1}{2}\text{Re}\{ R_{\Gamma(8)}\}^{[b_L\text{-even}]} \nonumber \\
+    &\quad + R(\zetahat^2) \frac{E_{N}|P_L|v^1}{2\mN^2 v^3} \text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]}
+\end{align}
 
 The same substitution for the imaginary component, now with the $b_L$-odd projected data sets so that time-reversal parity is preserved, gives:
-\begin{multline}
-    \tAmp_{2B}^{\text{Im}}(b_L, b_T, \hat{\zeta}) = \frac{1}{2}\text{Im}\{ R_{\Gamma(8)}\}^{[b_L\text{-odd}]} \\ - R(\zetahat^2) \frac{E_{N}|P_L|v^1}{2\mN^2 v^3} \text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]}
-\end{multline}
+\begin{align}
+    &\tAmp_{2B}^{\text{Im}}(b_L, b_T, \hat{\zeta}) = \frac{1}{2}\text{Im}\{ R_{\Gamma(8)}\}^{[b_L\text{-odd}]} \nonumber \\
+    &\quad - R(\zetahat^2) \frac{E_{N}|P_L|v^1}{2\mN^2 v^3} \text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]}
+\end{align}
 
 The amplitude that drives the Sivers shift, $\tAmp_{12B}$, combines the structures $\tAmp_{12}$ and $\tBmp_8$. Its real and imaginary decompositions are defined as:
 \begin{align}
@@ -181,23 +183,31 @@ The amplitude that drives the Sivers shift, $\tAmp_{12B}$, combines the structur
 
 Because the terms within $\tAmp_{12B}$ are more complex, we first write out the inner constituent $\tAmp_{12}^{\text{Re}}$ in terms of the grid parameters $b_L$ and $b_T$. The real part of the leading-twist term becomes:
 \begin{align}
-    \tAmp^{\text{Re}}_{12} &= \frac{-1}{2\mN\, b_T} \left[\text{Re}\{ R_{\Gamma(1)}\}^{[b_L\text{-even}]} + \frac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]}\right]
+    &\tAmp^{\text{Re}}_{12} = \frac{-1}{2\mN\, b_T} \Big[\text{Re}\{ R_{\Gamma(1)}\}^{[b_L\text{-even}]} \nonumber \\
+    &\qquad + \frac{v^3}{v^1}\text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]}\Big]
 \end{align}
 
 Substituting this internal structure alongside the expansion for $\tBmp_8^{\text{Re}}$ gives the full equation for the real part entering the Sivers integration:
-\begin{multline}
-    \tAmp_{12B}^{\text{Re}}(b_L, b_T, \hat{\zeta}) = \tAmp^{\text{Re}}_{12} \\ - R(\zetahat^2) \frac{-E_N |P_L|}{ 2\mN^3\, b_T }\Bigg[\text{Im}\{ R_{\Gamma(8)}\}^{[b_L\text{-even}]} \\ + \frac{|P_L|v^3}{E_N v^1}\text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]} \\ + 2\mN  \frac{|P_L|}{E_N}\, b_T\,  \tAmp^{\text{Re}}_{12}\Bigg]
-\end{multline}
+\begin{align}
+    &\tAmp_{12B}^{\text{Re}}(b_L, b_T, \hat{\zeta}) = \tAmp^{\text{Re}}_{12} \nonumber \\
+    &\quad - R(\zetahat^2) \frac{-E_N |P_L|}{ 2\mN^3\, b_T }\Bigg[\text{Im}\{ R_{\Gamma(8)}\}^{[b_L\text{-even}]} \nonumber \\
+    &\qquad + \frac{|P_L|v^3}{E_N v^1}\text{Re}\{ R_{\Gamma(4)}\}^{[b_L\text{-even}]} \nonumber \\
+    &\qquad + 2\mN  \frac{|P_L|}{E_N}\, b_T\,  \tAmp^{\text{Re}}_{12}\Bigg]
+\end{align}
 
 Following the same procedure for the imaginary (T-odd) components, we first define the internal $b_L$-odd constituent $\tAmp^{\text{Im}}_{12}$:
 \begin{align}
-    \tAmp^{\text{Im}}_{12} &= \frac{-1}{2\mN\, b_T} \left[\text{Im}\{ R_{\Gamma(1)}\}^{[b_L\text{-odd}]} + \frac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]}\right]
+    &\tAmp^{\text{Im}}_{12} = \frac{-1}{2\mN\, b_T} \Big[\text{Im}\{ R_{\Gamma(1)}\}^{[b_L\text{-odd}]} \nonumber \\
+    &\qquad + \frac{v^3}{v^1}\text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]}\Big]
 \end{align}
 
 We then insert it to obtain the full equation for the imaginary part of the Sivers amplitude:
-\begin{multline}
-    \tAmp_{12B}^{\text{Im}}(b_L, b_T, \hat{\zeta}) = \tAmp^{\text{Im}}_{12} \\ - R(\zetahat^2) \frac{E_N |P_L|}{ 2\mN^3\, b_T }\Bigg[\text{Re}\{ R_{\Gamma(8)}\}^{[b_L\text{-odd}]} \\ - \frac{|P_L|v^3}{E_N v^1}\text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]} \\ - 2\mN  \frac{|P_L|}{E_N}\, b_T\,  \tAmp^{\text{Im}}_{12}\Bigg]
-\end{multline}
+\begin{align}
+    &\tAmp_{12B}^{\text{Im}}(b_L, b_T, \hat{\zeta}) = \tAmp^{\text{Im}}_{12} \nonumber \\
+    &\quad - R(\zetahat^2) \frac{E_N |P_L|}{ 2\mN^3\, b_T }\Bigg[\text{Re}\{ R_{\Gamma(8)}\}^{[b_L\text{-odd}]} \nonumber \\
+    &\qquad - \frac{|P_L|v^3}{E_N v^1}\text{Im}\{ R_{\Gamma(4)}\}^{[b_L\text{-odd}]} \nonumber \\
+    &\qquad - 2\mN  \frac{|P_L|}{E_N}\, b_T\,  \tAmp^{\text{Im}}_{12}\Bigg]
+\end{align}
 
 At this stage, the amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ are discrete functions of the Cartesian lattice grid parameters $b_L$ and $b_T$. Extracting the dependence on the longitudinal momentum fraction $x$, however, requires the Fourier transform over the Lorentz-invariant inner product $P \cdot b$. To perform this integration, we first show that our simulated Cartesian lattice coordinates map one-to-one to the invariant Variable Space.
 
@@ -225,7 +235,8 @@ To complete the geometric mapping, we must also express the invariant $\bvec\cdo
 
 By replacing $b_L$ and $\bvec^2$ with these invariant expressions, we transform our discrete lattice amplitudes into continuous functions of the Lorentz-invariant variables:
 \begin{align}
-    \tAmp_{iB}(b_L, b_T, \hat{\zeta}) \quad \xrightarrow{\text{Coordinate Transformation}} \quad \tAmp_{iB}\left( P \cdot b, \bvec^2, \hat{\zeta} \right)
+    &\tAmp_{iB}(b_L, b_T, \hat{\zeta}) \nonumber \\
+    &\quad \xrightarrow{\text{Coordinate Transformation}} \tAmp_{iB}\left( P \cdot b, \bvec^2, \hat{\zeta} \right)
 \end{align}
 
 With the amplitudes now expressed as functions of $P \cdot b$, the Fourier transform of Eq.~\eqref{eq:sivers_shift_xdep} can be evaluated directly. This connects the Euclidean correlation ratios evaluated on the lattice to the physical, $x$-dependent phenomenological observables needed to study the Sivers effect.

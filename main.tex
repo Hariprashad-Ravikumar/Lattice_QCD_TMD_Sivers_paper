@@ -59,10 +59,11 @@ Using the PySR symbolic regression and statistical modeling, we systematically e
 \section{Construction of TMD Observables}
 \label{sec:construction}
 TMDs are derived from the unsubtracted correlator
-\begin{multline}
-	\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots) \equiv \\ \frac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \Wline{0,\eta v,\eta v+\bvec,\bvec}\ q(\bvec)\ \ket{P,S}\ ,
+\begin{align}
+	&\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots) \equiv \nonumber\\
+	&\quad \frac{1}{2}\, \bra{P,S}\ \bar{q}(0)\, \Gamma\ \Wline{0,\eta v,\eta v+\bvec,\bvec}\ q(\bvec)\ \ket{P,S}\ ,
 	\label{eq-corr}
-\end{multline}
+\end{align}
 where ``unsubtr.'' indicates that no ultraviolet or soft divergences have been absorbed into renormalization factors yet. The nucleon states are labeled by momentum $P$ and spin $S$. The tilde denotes position-space correlators, and the same symbol without the tilde denotes their Fourier transforms. The quark fields, separated by $\bvec$, are joined by a staple-shaped gauge connection: two parallel Wilson lines of extent $\eta$ along the direction $v$, closed by a transverse link at the far end~\cite{Musch:2011er}. For $\eta\to+\infty$ and $\eta\to-\infty$ the staple describes the final-state interactions of SIDIS and the initial-state interactions of DY, respectively. In the TMD definition $v$ has no transverse component.
 
 A light-like $v$ leads to rapidity divergences beyond tree level~\cite{Collins:1981uk,Aybat:2011ge}, so we take $v$ off the light cone into the space-like region. The TMDs then depend on the Collins-Soper-type parameter
@@ -75,11 +76,11 @@ which measures how close $v$ is to the light cone. The light-cone limit is $\zet
 The correlator~\eqref{eq-corr} contains ultraviolet divergences of the Wilson line as well as soft and collinear divergences. In the continuum these are absorbed into the quark field renormalization and a soft factor $\widetilde{\softf}$, which is built from Wilson lines only and so does not depend on $\Gamma$~\cite{Musch:2011er,Aybat:2011zv,CollinsBook2011}. We do not need its explicit form, since it cancels in the observables below. Analytical studies suggest that for $\bvec^2\neq0$ the renormalization of the nonlocal operator is multiplicative and $\Gamma$-independent~\cite{Musch:2011er,Yoon:2017qzo}. We assume that this carries over to our lattice operator when $|\bvec|$ is larger than a few lattice spacings. The soft factor and the renormalization constants then cancel in ratios of correlators evaluated at the same $\bvec$, $P$, and $\eta v$.
 
 Integrating over the suppressed momentum component $k^-$ sets $b^+=0$. The momentum-space correlator is then
-\begin{multline}
-	\Phi^{[\Gamma]}(x,\vprp{\kei};P,S;\ldots) = \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+} \\
-		\times e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}} \left. \frac{\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}{\widetilde{\softf}(\bvec^2;\ldots)} \right|_{b^+ = 0} ,
+\begin{align}
+	&\Phi^{[\Gamma]}(x,\vprp{\kei};P,S;\ldots) = \int \frac{d^2 \vprp{\bvec}}{(2\pi)^2} \int \frac{d (\bvec \tcdot P)}{(2\pi) P^+} \nonumber\\
+	&\quad \times e^{i x (\bvec \tcdot P) - i\vprp{\bvec} \tcdot \vprp{\kei}} \left. \frac{\widetilde \Phi_\unsub^{[\Gamma]}(\bvec,P,S;\ldots)}{\widetilde{\softf}(\bvec^2;\ldots)} \right|_{b^+ = 0} ,
 	\label{eq-corrx}
-\end{multline}
+\end{align}
 so that $x$ is conjugate to $\bvec\tcdot P$ and $\vprp{\kei}$ is conjugate to $\vprp{\bvec}$. Scanning the longitudinal separation $\bvec\tcdot P$ therefore gives access to the $x$-dependence~\cite{Hagler:2009mb,Musch:2010ka}.
 
 For $\Gamma=\gamma^+$, which projects onto the leading-twist unpolarized quark distribution, the correlator takes the form~\cite{Ralston:1979ys,Tangerman:1994eh,Mulders:1995dh,Goeke:2005hb}
@@ -93,11 +94,11 @@ where the bracketed term is the naively time-reversal-odd Sivers function~\cite{
 	\label{eq-ampgammaplus}
 \end{equation}
 with $i,j\in\{1,2\}$, $\myeps_{12}=1$, and
-\begin{equation}
-	\tAmp_{2B} \equiv \tAmp_2 + R(\zetahat^2)\, \tBmp_1\ , \qquad
-	\tAmp_{12B} \equiv \tAmp_{12} - R(\zetahat^2)\, \tBmp_8\ ,
+\begin{align}
+	&\tAmp_{2B} \equiv \tAmp_2 + R(\zetahat^2)\, \tBmp_1\ , \nonumber\\
+	&\tAmp_{12B} \equiv \tAmp_{12} - R(\zetahat^2)\, \tBmp_8\ ,
 	\label{eq-ABamps_sivers}
-\end{equation}
+\end{align}
 where $R(\zetahat^2)\equiv 1-\sqrt{1+\zetahat^{-2}}$. The full decomposition and its symmetry constraints are given in Ref.~\cite{Musch:2011er} and Appendix~\ref{app:symmetries}. In this kinematics the amplitudes depend on $\bvec^2$, $\bvec\tcdot P$, $\zetahat$, and $\eta v\tcdot P$. The remaining invariant is not independent, because
 \begin{equation}
 	\frac{v \tcdot \bvec}{v \tcdot P} = \bvec \tcdot P \,\frac{R(\zetahat^2)}{\mN^2}\ ,
@@ -106,32 +107,36 @@ where $R(\zetahat^2)\equiv 1-\sqrt{1+\zetahat^{-2}}$. The full decomposition and
 and the link directions $\bvec$ and $v$ on the lattice must be chosen to satisfy it~\cite{MuschThesis2,Accardi:2009au}.
 
 Our lattice method evaluates $\widetilde\Phi_\unsub$ in position space, so we state results through the Fourier-transformed TMDs~\cite{Boer:2011xd}
-\begin{multline}
-	\tilde f(x, \vprp{\bvec}^2;\ldots) \equiv \int  d^2 \vprp{\kei} \, e^{i \vprp{\bvec} \cdot \vprp{\kei} } \\ \times f(x, \vprp{\kei}^2;\ldots)\ , \label{eq-FTMD}
-\end{multline}
+\begin{align}
+	&\tilde f(x, \vprp{\bvec}^2;\ldots) \equiv \int d^2 \vprp{\kei}\, e^{i \vprp{\bvec} \cdot \vprp{\kei}} \nonumber\\
+	&\quad \times f(x, \vprp{\kei}^2;\ldots)\ ,
+	\label{eq-FTMD}
+\end{align}
 \begin{equation}
 	\tilde f^{(n)}(x, \vprp{\bvec}^2;\ldots ) \equiv n!\left( -\frac{2}{\mN^2}\partial_{\vprp{\bvec}^2} \right)^n \tilde f(x, \vprp{\bvec}^2;\ldots )\ . \label{eq-dFTMD}
 \end{equation}
 For $\vprp{\bvec}\to0$ these reduce to the usual $\vprp{\kei}$-moments, but the first moment of the Sivers function diverges without additional regularization~\cite{Bacchetta:2008xw}. We therefore work at finite $|\vprp{\bvec}|$. Appendix~\ref{app:symmetries} derives
-\begin{multline}
-	\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \\ 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
-	\frac{\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
+\begin{align}
+	&\tilde f_1^{(0)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \nonumber\\
+	&\quad 2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)} \nonumber\\
+	&\quad \times \frac{\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
 	\label{eq-xintderfttmds1}
-\end{multline}
-\begin{multline}
-	\tilde f_{1T}^{\perp(1)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \\ -2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)}\,
-	\frac{\tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
+\end{align}
+\begin{align}
+	&\tilde f_{1T}^{\perp(1)}(x, \vprp{\bvec}^2;\zetahat,\ldots,\eta v \tcdot P) = \nonumber\\
+	&\quad -2 \int \frac{d(\bvec \tcdot P)}{2\pi}\, e^{ix(\bvec \tcdot P)} \nonumber\\
+	&\quad \times \frac{\tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v\tcdot P)}{\widetilde{\mathcal{S}}(\bvec^2;\ldots)}\ ,
 	\label{eq-xintderfttmds2}
-\end{multline}
+\end{align}
 with $\bvec^2=-\vprp{\bvec}^2$ and the remaining amplitude arguments fixed by $\zetahat$ and $\bvec\tcdot P$ through Eq.~\eqref{eq-lindeprel}. The unpolarized distribution is T-even and the Sivers distribution is T-odd, so under $\eta v\tcdot P\to-\eta v\tcdot P$ the first is unchanged and the second changes sign. T-odd TMDs therefore vanish for a straight link ($\eta=0$) and have opposite signs in the SIDIS and DY limits.
 
 The generalized Sivers shift is the ratio of these two Fourier-transformed TMDs,
-\begin{multline}
-	\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
-	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}} \\
-	= -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}\ .
+\begin{align}
+	&\langle \vect{k}_y \rangle_{TU}(\vprp{\bvec}^2,x,\zetahat,\eta v \tcdot P)
+	\equiv \mN \frac{\tilde f_{1T}^{\perp(1)}}{\tilde f_1^{(0)}} \nonumber\\
+	&\quad = -\mN \frac{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\, \tAmp_{12B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}{\int d(\bvec\tcdot P)\,e^{ix(\bvec\tcdot P)}\,\tAmp_{2B}(\bvec^2,\bvec \tcdot P;\zetahat,\eta v \tcdot P)}\ .
 	\label{eq-genSivShift}
-\end{multline}
+\end{align}
 The soft factor drops out of the ratio. In the limit $\vprp{\bvec}^2\to0$ it becomes the familiar Sivers shift, the average transverse momentum in the $y$-direction of unpolarized quarks with longitudinal momentum fraction $x$ in a proton polarized in the $x$-direction. At nonzero $\vprp{\bvec}^2$ the integrals converge, and $\vprp{\bvec}^2$ acts as a regulator.
 
 \section{Lattice Setup}
