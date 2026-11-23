@@ -6,9 +6,9 @@ For a function $f(x,|\vect b_T|)$ we minimize $J=\int dx\,d|\vect b_T|\,\big(f-g
 h(|\vect b_T|)=\frac{\int dx\,f\,g}{\int dx\,g^2}\,,\qquad
 g(x)=\frac{\int d|\vect b_T|\,f\,h}{\int d|\vect b_T|\,h^2}\,.
 \end{equation}
-Eliminating $h$ gives a closed equation for $g$, which we solve by iteration from $g=1$ until $g$ and the relative distance $\sqrt{J/N}$, $N=\int dx\,d|\vect b_T|\,f^2$, stop changing within a fixed tolerance. On a discrete grid the integrals become sums, and the iteration is applied to each Jackknife sample of the extrapolated amplitudes. The windows $x\in[0,1]$, $[0.1,0.9]$, $[0.2,0.8]$, $[0.3,0.8]$ test that the result does not depend on the behavior near $x=0$.
+Eliminating $h$ gives a closed equation for $g$, which we solve by iteration from $g=1$ until $g$ and the relative distance $\sqrt{J/N}$, $N=\int dx\,d|\vect b_T|\,f^2$, stop changing within a fixed tolerance. On a discrete grid the integrals become sums, and the iteration is applied to each Jackknife sample of the extrapolated amplitudes. The windows $x\in[0,1]$, $[0.1,0.9]$, $[0.2,0.8]$, $[0.3,0.8]$ probe the sensitivity of the result to the behavior near $x=0$.
 
-Applied to the individual extrapolated amplitudes, the same test gives the relative distances in Table~\ref{tab:fact_amps}. Every amplitude has a nonzero distance in every window, and all of them shrink as the window narrows away from $x=0$, consistent with the Bessel-function behavior near the origin, which differs between amplitudes because of the parameter mismatch described in Sec.~\ref{sec:factorization}.
+Applied to the individual extrapolated amplitudes, the same test gives the relative distances in Table~\ref{tab:fact_amps}. Every amplitude has a nonzero distance in every window, and all of them shrink as the window narrows away from $x=0$, which may be related to the Bessel-function behavior near the origin and to the parameter mismatch between the amplitudes (Sec.~\ref{sec:factorization}).
 
 \begin{table}[H]
 \caption{Relative distance from a factorized form for the extrapolated amplitudes, on the same $|\vect b_T|$ grid and $x$-windows as Table~\ref{tab:fact_sivers}.}
