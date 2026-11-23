@@ -1,32 +1,22 @@
 \section{Fit exploration}
 \label{app:fit_exploration}
-This appendix collects the fits that lead to the choice of the coupled Lorentzian power law in Sec.~\ref{sec:power_law} and of the $\eta$ dependence in Sec.~\ref{sec:eta_dependence}. All fits are for $P_L=-1$, $|\vect b|\ge3a$ and $6\le\eta\le10$.
+This appendix collects the fits that lead to the choice of the coupled Lorentzian power law in Sec.~\ref{sec:power_law} and of the $\eta$ dependence in Sec.~\ref{sec:eta_dependence}. All fits are for $P_L=-2$, $|\vect b|\ge3a$ and $6\le\eta\le10$.
+
 
 \subsection{Exponential decay in $|\vect b|$}
 
-Fig.~\ref{fig:exp_straight} is the straight-line test for an exponential decay $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ in $|\vect b|=\sqrt{b^2}$. The exponential fit has $\mathcal L\approx2.63$ with $e^{-f\eta}$, and $2.26$ with a constant offset added, which is above the $C=16$ \texttt{PySR} model ($\mathcal L=2.03$). An exponential in $|\vect b|$ has no entry on the Pareto front.
+Fig.~\ref{fig:exp_straight} is the straight-line test for an exponential decay $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ in $|\vect b|=\sqrt{b^2}$. We fit $Ae^{-c|\vect b|}e^{-f\eta}$ with the loss of Eq.~\eqref{eq:pysr_loss}, which gives $c=0.685$ and $\mathcal L=1.42$ for three parameters, and $\mathcal L=1.31$ when a constant offset is added. For comparison, the \texttt{PySR} models of Table~\ref{tab:pysr_pareto} have $\mathcal L=1.61$ at $C=13$, $1.38$ at $C=15$ (five parameters) and $1.26$ at $C=17$. Over $3\le|\vect b|/a\le8.2$ the exponential in $|\vect b|$ therefore describes the data about as well as the power-law models, with fewer parameters. The search library has no function of $|\vect b|$ alone, so the Pareto front does not test this form. The separable ansätze of Sec.~\ref{sec:power_law} apply it to all three amplitudes.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/fits/03_Exponential_b_StraightLine_Test.pdf}
-\caption{Straight-line test for an exponential decay in $|\vect b|=\sqrt{b^2}$. A profile $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ is a straight line on a logarithmic ordinate. The best fit has $c=0.579$, and over $3\le|\vect b|/a\le8.2$ the exponential describes the data at least as well as the power law.}
+\includegraphics[width=\columnwidth]{figures/results/exp_straight_PL2.pdf}
+\caption{Straight-line test for an exponential decay in $|\vect b|=\sqrt{b^2}$ at $P_L=-2$. A profile $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ is a straight line on a logarithmic ordinate. The best fit (red dashed, $c=0.685$, $\mathcal L=1.42$) and the $C=15$ \texttt{PySR} model (blue, $\mathcal L=1.38$) both follow the data over $3\le|\vect b|/a\le8.2$.}
 \label{fig:exp_straight}
 \end{figure}
 
-\subsection{Power-law fits with $\eta$-dependent $c$}
+\subsection{Gaussian and power-law fits with $\eta$-dependent widths}
 
-Figs.~\ref{fig:powerlaw_etaforms} and~\ref{fig:powerlaw_etaforms_wider} list, for each model, the expression, the fit parameters with their Jackknife-averaged values, $\chi^2/\text{dof}$, the Akaike information criterion and the resulting Fourier transform in $x$. The lattice data accommodate a wide range of asymptotic $\eta\to\infty$ behaviors, corresponding to a wide range of widths of the distributions in $x$. This is why the $\eta$ dependence of $c$ has to be constrained further (Sec.~\ref{sec:eta_dependence}).
+Tables~\ref{tab:gauss_family_PL2} and~\ref{tab:powerlaw_family_PL2} list, for each model, the fit parameters and the correlated $\chi^2/\text{dof}$. The Gaussian ansätze reach $\chi^2/\text{dof}=1.56$ at best, against $1.10$ to $1.24$ for the power-law forms. The power-law forms with an $\eta$-dependent $c$ ($c(1-k_1/\eta)$, $c(1-k_1/\eta-k_2/\eta^2)$ and the wider forms) all give $\chi^2/\text{dof}\approx1.12$, so the data do not single out one $c(\eta)$, and the choice rests on the criteria of Sec.~\ref{sec:simultaneous_fit}. For several forms only combinations of the shape parameters are determined, for example $c\,k_1$ in $c(1-k_1\ln\eta/\eta)$, and the individual values are then not meaningful (rows marked with $\dagger$).
 
-\begin{figure*}
-\centering
-\includegraphics[width=0.75\textwidth]{figures/fits/A2BfitFT_eta_Asymptotic_P1_crop.pdf}
-\caption{Three-dimensional Jackknife fits of $\tAmp_{2B}^{\text{Re}}(b_L,b_T,\eta)$ to a family of power-law ansätze, all built on the common baseline $\tAmp_{2B}^{\text{Re}}=a\,e^{-f\eta}\,[1+(c+d)b_L^2+d\,b_T^2]^{-j}$, in which the coefficient $c$ is either constant or one of several $\eta$-dependent forms, $c\to c(\eta)$. The fits use data at $P_L=-1$ with $|\vect b|\ge3a$ and $6\le\eta\le10$.}
-\label{fig:powerlaw_etaforms}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=0.75\textwidth]{figures/fits/A2Bfit_widerFT_eta_Asymptotic_P1_crop.pdf}
-\caption{As Fig.~\ref{fig:powerlaw_etaforms}, with further $\eta$-dependent forms $c\to c(\eta)$ that give wider Fourier transforms in $x$.}
-\label{fig:powerlaw_etaforms_wider}
-\end{figure*}
+\input{tables/table_gauss_family_PL2}
+\input{tables/table_powerlaw_family_PL2}
 \clearpage
