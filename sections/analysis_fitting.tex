@@ -53,17 +53,22 @@ $C$ & Loss & Expression $\tAmp_{2B}^{\text{Re}}(\eta,b_L,b_T)$ \\
 \end{ruledtabular}
 \end{table*}
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{figures/results/pysr_benchmark_PL2.pdf}
-\caption{\texttt{PySR} models ($C=11,13,15,17$) against the data for $\tAmp_{2B}^{\text{Re}}$ at $\eta=6,7,8,10$ ($P_L=-2$, $|\vect b|\ge3a$). The exponential-$\eta$ models $C=13$, $15$ and $17$ describe the data better than the power-law model $C=11$ ($\chi^2/\text{dof}=1.59$, $1.36$, $1.24$ against $2.51$, with the parameters not subtracted from the dof).}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/pysr/bench_eta6.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/bench_eta7.pdf}\par
+\includegraphics[width=\panelw]{figures/panels/pysr/bench_eta8.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/bench_eta10.pdf}\par
+\includegraphics[width=\panelw]{figures/panels/pysr/bench_legend.pdf}
+\caption{\texttt{PySR} models ($C=11,13,15,17$) against the data for $\tAmp_{2B}^{\text{Re}}$ at $\eta=6,7,8,10$ in panels (a)--(d) ($P_L=-2$, $|\vect b|\ge3a$). The exponential-$\eta$ models $C=13$, $15$ and $17$ describe the data better than the power-law model $C=11$ ($\chi^2/\text{dof}=1.59$, $1.36$, $1.24$ against $2.51$, with the parameters not subtracted from the dof). Open and filled symbols are $b_T<0$ and $b_T\ge0$; colour encodes $|b_T|/a$.}
 \label{fig:pysr_benchmark}
-\end{figure}
+\end{figure*}
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{figures/results/pysr_gauss_straight_PL2.pdf}
-\caption{Straight-line test for a Gaussian profile at $P_L=-2$. The data (black) curve upward away from the best Gaussian fit (red dashed, $c=0.076$, $\chi^2/\text{dof}=2.03$) and follow the Lorentzian $(1+0.041\,b^2)^{-3.48}$ (blue, $\chi^2/\text{dof}=1.42$). Both fits share the factor $e^{-f\eta}$ and are fitted to all $\eta$ at once.}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/pysr/gauss_eta6.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/gauss_eta7.pdf}\par
+\includegraphics[width=\panelw]{figures/panels/pysr/gauss_eta8.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/gauss_eta10.pdf}
+\caption{(a)--(d) Straight-line test at $\eta=6,7,8,10$ for a Gaussian profile at $P_L=-2$. The data (black) curve upward away from the best Gaussian fit (red dashed, $c=0.076$, $\chi^2/\text{dof}=2.03$) and follow the Lorentzian $(1+0.041\,b^2)^{-3.48}$ (blue, $\chi^2/\text{dof}=1.42$). Both fits share the factor $e^{-f\eta}$ and are fitted to all $\eta$ at once.}
 \label{fig:pysr_gauss}
-\end{figure}
+\end{figure*}
 
 \subsection{Lorentzian power law and its Fourier transform}
 \label{sec:power_law}
@@ -114,13 +119,22 @@ Coupled power law & $0.1346(69)$ & $0.0769(54)$ & $+0.368(12)$ \\
 
 Guided by the \texttt{PySR} result, we explore the $\eta$ dependence of the power-law model in more detail. We fit $\tAmp_{2B}^{\text{Re}}$ with $6\le\eta\le10$ and $|\vect b|\ge3a$, using the correlated $\chi^2$ of the full Jackknife covariance matrix, and count the degrees of freedom as in the simultaneous fits, with all rows including the duplicated $b_L\to-b_L$ rows. With Eq.~\eqref{eq:lorentzian_base} and a constant $c$ we find $\chi^2/\text{dof}=1.24(15)$. An $\eta$-dependent $c$ lowers the correlated $\chi^2$ by 28 for one extra parameter, to $\chi^2/\text{dof}=1.12(14)$ for $c(1-k_1/\eta)$ (Table~\ref{tab:powerlaw_family_PL2}). A second shape parameter does not help: $c(1-k_1/\eta-k_2/\eta^2)$ has the same $\chi^2$, and $k_2=-6(25)$ is consistent with zero. The wider forms of Table~\ref{tab:powerlaw_family_PL2} also give $\chi^2/\text{dof}\approx1.12$, so the data accommodate a wide range of $\eta$ dependences of $c$, which correspond to a wide range of widths of the Fourier transform in $x$. With only the 140 independent rows, the $\chi^2/\text{dof}$ values are about 1.6 times larger, for example $1.84$ instead of $1.12$ for $c(1-k_1/\eta-k_2/\eta^2)$. For comparison, a family of Gaussian ansätze with $\eta$-dependent widths gives $\chi^2/\text{dof}$ between $1.56$ and $1.91$ (Table~\ref{tab:gauss_family_PL2}). Their correlated $\chi^2$ is 73 to 138 higher than that of the best power-law fit with the same number of parameters (for the 15 Gaussian forms that have a power-law counterpart), and for most forms their longitudinal coefficient is zero within errors or negative ($c=-0.0017(7)$ for constant $c$ and $d$).
 
-To isolate the $\eta$ dependence of $c$ and $d$, we fix $a$, $f$ and $j$ to the values of a separate fit of each amplitude and fit the individual $\eta$ slices sequentially. We then fit a straight line $y_0+s\,(\eta-8)$ to each parameter with the full covariance across $\eta$ (Fig.~\ref{fig:c_d_eta_PL2}). For $\tAmp_{2B}^{\text{Re}}$ we use the values of the global fit with $c(1-k_1/\eta-k_2/\eta^2)$ ($a=2.47$, $f=0.484$, $j=2.52$), which the other $\eta$-dependent forms of Table~\ref{tab:powerlaw_family_PL2} share closely. For $\tAmp_{12B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$ we use the values of their own global fits with constant $c$ ($a=0.77$, $f=0.50$, $j=2.41$ and $a=0.44$, $f=0.60$, $j=2.37$). For $\tAmp_{2B}^{\text{Re}}$ the parameter $c$ rises with $\eta$, with slope $0.0054(19)$ ($2.8\sigma$) and $\chi^2/\text{dof}=0.29$. The slope of $d$ is $0.0006(9)$, consistent with zero, but the line does not describe the five points ($\chi^2/\text{dof}=4.3$). Each form $c(\eta)=c\,g(\eta)$ was fitted to the five slice values of $c$ with the Jackknife covariance across $\eta$ (dashed curves in Fig.~\ref{fig:c_d_eta_PL2}, parameters in Table~\ref{tab:c_eta_forms_PL2}). A constant $c$ does not describe them ($\chi^2=8.69$ for 4 degrees of freedom), while all $\eta$-dependent forms do. Several forms describe the slice values of $c$ equally well, so goodness of fit has to be paired with the physical constraints of Sec.~\ref{sec:simultaneous_fit}. We select $c(\eta)=c\,(1-k_1/\eta-k_2/\eta^2)$, which suppresses the antiquark region $x\lesssim-0.2$ at higher momentum. We keep $d$ constant in $\eta$, although the straight line does not describe the slice values of $d$.
+To isolate the $\eta$ dependence of $c$ and $d$, we fix $a$, $f$ and $j$ to the values of a separate fit of each amplitude and fit the individual $\eta$ slices sequentially. We then fit a straight line $y_0+s\,(\eta-8)$ to each parameter with the full covariance across $\eta$ (Figs.~\ref{fig:c_d_eta_PL2} and~\ref{fig:c_d_eta_PL2_rest}). For $\tAmp_{2B}^{\text{Re}}$ we use the values of the global fit with $c(1-k_1/\eta-k_2/\eta^2)$ ($a=2.47$, $f=0.484$, $j=2.52$), which the other $\eta$-dependent forms of Table~\ref{tab:powerlaw_family_PL2} share closely. For $\tAmp_{12B}^{\text{Re}}$ and $\tAmp_{2B}^{\text{Im}}$ we use the values of their own global fits with constant $c$ ($a=0.77$, $f=0.50$, $j=2.41$ and $a=0.44$, $f=0.60$, $j=2.37$). For $\tAmp_{2B}^{\text{Re}}$ the parameter $c$ rises with $\eta$, with slope $0.0054(19)$ ($2.8\sigma$) and $\chi^2/\text{dof}=0.29$. The slope of $d$ is $0.0006(9)$, consistent with zero, but the line does not describe the five points ($\chi^2/\text{dof}=4.3$). Each form $c(\eta)=c\,g(\eta)$ was fitted to the five slice values of $c$ with the Jackknife covariance across $\eta$ (dashed curves in Fig.~\ref{fig:c_d_eta_PL2}, parameters in Table~\ref{tab:c_eta_forms_PL2}). A constant $c$ does not describe them ($\chi^2=8.69$ for 4 degrees of freedom), while all $\eta$-dependent forms do. Several forms describe the slice values of $c$ equally well, so goodness of fit has to be paired with the physical constraints of Sec.~\ref{sec:simultaneous_fit}. We select $c(\eta)=c\,(1-k_1/\eta-k_2/\eta^2)$, which suppresses the antiquark region $x\lesssim-0.2$ at higher momentum. We keep $d$ constant in $\eta$, although the straight line does not describe the slice values of $d$.
 
 For $\tAmp_{12B}^{\text{Re}}$ the slopes of $c$ and $d$ are $0.0098(87)$ and $0.0004(29)$, and for $\tAmp_{2B}^{\text{Im}}$ they are $0.0010(41)$ and $-0.0006(29)$. All four are within $1.2\sigma$ of zero, with $\chi^2/\text{dof}<1$ for every line. The data for these two amplitudes are noisier. We keep $c$ and $d$ constant in $\eta$ for both.
-\begin{figure*}
-\includegraphics[width=\textwidth]{figures/fits/c_d_vs_eta_PL2.pdf}
-\caption{Parameters $c$ (top) and $d$ (bottom) of $\tAmp_{2B}^{\text{Re}}$ (left), $\tAmp_{12B}^{\text{Re}}$ (middle) and $\tAmp_{2B}^{\text{Im}}$ (right) at $P_L=-2$ from fits to individual $\eta$ slices, with $a$, $f$ and $j$ fixed to the values of separate global fits of each amplitude (not of the simultaneous fit). The red lines are straight-line fits $y_0+s\,(\eta-8)$ with the full covariance across $\eta$, and the bands are their $1\sigma$ uncertainty. The error bars on the points are the diagonal jackknife errors. Each panel gives the slope $s$ and the $\chi^2/\text{dof}$ of the line (3 degrees of freedom). The dashed curves in the $c$ panel of $\tAmp_{2B}^{\text{Re}}$ are the forms $c(\eta)=c\,g(\eta)$ of the legend, fitted to the five slice values of $c$ (Table~\ref{tab:c_eta_forms_PL2}).}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/cd/cd_ReA2B_c.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/cd/cd_legend.pdf}
+\caption{Parameter $c$ of $\tAmp_{2B}^{\text{Re}}$ from fits to individual $\eta$ slices (points, diagonal Jackknife errors), with a straight-line fit $y_0+s\,(\eta-8)$ (full covariance across $\eta$, band $1\sigma$) and the forms $c(\eta)=c\,g(\eta)$ of the legend fitted to the five points (dashed curves, Table~\ref{tab:c_eta_forms_PL2}). Each panel gives the slope $s$ and the $\chi^2/\text{dof}$ of the line (3 degrees of freedom).}
 \label{fig:c_d_eta_PL2}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/cd/cd_ReA2B_d.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/cd/cd_ReA12B_c.pdf}\\[1ex]
+\includegraphics[width=\panelw]{figures/panels/cd/cd_ReA12B_d.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/cd/cd_ImA2B_c.pdf}\\[1ex]
+\includegraphics[width=\panelw]{figures/panels/cd/cd_ImA2B_d.pdf}
+\caption{As Fig.~\ref{fig:c_d_eta_PL2}, in reading order for $d$ of $\tAmp_{2B}^{\text{Re}}$, $c$ and $d$ of $\tAmp_{12B}^{\text{Re}}$, and $c$ and $d$ of $\tAmp_{2B}^{\text{Im}}$.}
+\label{fig:c_d_eta_PL2_rest}
 \end{figure*}
 
 \subsection{Simultaneous fit}
@@ -155,12 +169,24 @@ $f$ & \multicolumn{3}{c}{$0.5357(66)$ (common)} \\
 \end{ruledtabular}
 \end{table}
 
-Table~\ref{tab:fit_params_P2} gives the parameters and the global $\chi^2/\text{dof}$ at $P_L=-2$. Fig.~\ref{fig:ft_xdep_P2} shows the $x$ dependence at $b^2=9a^2$ obtained from the Fourier transform of the fitted amplitudes over $P\cdot b$.
+Table~\ref{tab:fit_params_P2} gives the parameters and the global $\chi^2/\text{dof}$ at $P_L=-2$. Figs.~\ref{fig:ft_xdep_P2}--\ref{fig:ft_xdep_P2_siv} show the $x$ dependence at $b^2=9a^2$ obtained from the Fourier transform of the fitted amplitudes over $P\cdot b$.
 
 
-\begin{figure*}
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/fits/FT_xdep_A2B_A12B_bmin3_eta610_b2-9_PL-2.pdf}
-\caption{$x$ dependence at $b^2=9a^2$ for $P_L=-2$. Top row: $\tAmp^{[x]\text{Re}}_{2B}$, $\tAmp^{[x]\text{Im}}_{2B}$ and $\tilde f_1^{(0)}=2\tAmp^{[x]}_{2B}$. Bottom row: $\tilde f_{1T}^{\perp(1)}$, $\langle k_y\rangle_{TU}$ and $x\langle k_y\rangle_{TU}$. Bands are Jackknife uncertainties.}
+\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_ReA2B.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_ImA2B.pdf}
+\caption{$x$ dependence at $b^2=9a^2$ of the Fourier transforms $\tAmp^{[x]\text{Re}}_{2B}$ (a) and $\tAmp^{[x]\text{Im}}_{2B}$ (b) at $P_L=-2$. Bands are Jackknife uncertainties.}
 \label{fig:ft_xdep_P2}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_f1.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_f1T.pdf}
+\caption{As Fig.~\ref{fig:ft_xdep_P2}, for $\tilde f_1^{(0)}=2\tAmp^{[x]}_{2B}$ (a) and $\tilde f_{1T}^{\perp(1)}=-2\tAmp^{[x]\text{Re}}_{12B}$ (b).}
+\label{fig:ft_xdep_P2_tmd}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_ky.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/xdep/xdep_PL2_xky.pdf}
+\caption{As Fig.~\ref{fig:ft_xdep_P2}, for the Sivers shift $\langle k_y\rangle_{TU}$ (a) and $x\langle k_y\rangle_{TU}$ (b).}
+\label{fig:ft_xdep_P2_siv}
 \end{figure*}

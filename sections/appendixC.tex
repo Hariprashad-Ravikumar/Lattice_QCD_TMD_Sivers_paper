@@ -7,11 +7,14 @@ The fits below support the choice of the coupled Lorentzian power law (Sec.~\ref
 
 Fig.~\ref{fig:exp_straight} is the straight-line test for an exponential decay $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ in $|\vect b|=\sqrt{b^2}$. We fit $Ae^{-c|\vect b|}e^{-f\eta}$ with the loss of Eq.~\eqref{eq:pysr_loss}, which gives $c=0.685$ and $\mathcal L=1.42$ for three parameters, and $\mathcal L=1.31$ when a constant offset is added. For comparison, the \texttt{PySR} models of Table~\ref{tab:pysr_pareto} have $\mathcal L=1.61$ at $C=13$, $1.38$ at $C=15$ (five parameters) and $1.26$ at $C=17$. Over $3\le|\vect b|/a\le8.2$ the exponential in $|\vect b|$ therefore describes the data about as well as the power-law models, with fewer parameters. The search library has no function of $|\vect b|$ alone, so the Pareto front does not test this form. The separable ansätze of Sec.~\ref{sec:power_law} apply it to all three amplitudes.
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{figures/results/exp_straight_PL2.pdf}
-\caption{Straight-line test for an exponential decay in $|\vect b|=\sqrt{b^2}$ at $P_L=-2$. A profile $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ is a straight line on a logarithmic ordinate. The best fit (red dashed, $c=0.685$, $\mathcal L=1.42$) and the $C=15$ \texttt{PySR} model (blue, $\mathcal L=1.38$) both follow the data over $3\le|\vect b|/a\le8.2$.}
+\begin{figure*}[!p]
+\centering
+\includegraphics[width=\panelw]{figures/panels/pysr/exp_eta6.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/exp_eta7.pdf}\par
+\includegraphics[width=\panelw]{figures/panels/pysr/exp_eta8.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/exp_eta9.pdf}\par
+\includegraphics[width=\panelw]{figures/panels/pysr/exp_eta10.pdf}\hfill\includegraphics[width=\panelw]{figures/panels/pysr/exp_legend.pdf}
+\caption{Panels (a)--(e): $\eta=6,7,8,9,10$. Straight-line test for an exponential decay in $|\vect b|=\sqrt{b^2}$ at $P_L=-2$. A profile $\tAmp_{2B}^{\text{Re}}\propto e^{-c|\vect b|}$ is a straight line on a logarithmic ordinate. The best fit (red dashed, $c=0.685$, $\mathcal L=1.42$) and the $C=15$ \texttt{PySR} model (blue, $\mathcal L=1.38$) both follow the data over $3\le|\vect b|/a\le8.2$.}
 \label{fig:exp_straight}
-\end{figure}
+\end{figure*}
 
 \subsection{Gaussian and power-law fits with $\eta$-dependent widths}
 
@@ -20,4 +23,3 @@ Tables~\ref{tab:gauss_family_PL2} and~\ref{tab:powerlaw_family_PL2} list, for ea
 \input{tables/table_gauss_family_PL2}
 \input{tables/table_powerlaw_family_PL2}
 \input{tables/table_c_eta_forms_PL2}
-\clearpage

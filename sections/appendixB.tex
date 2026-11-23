@@ -1,46 +1,14 @@
-\section{Explicit $\hat\zeta$ calculation for $P_1=-1$}
-\label{app:explicit_zeta}
-Setting the right-hand side of Eq. \eqref{constraints} to zero implies that the bracketed term
-\begin{equation*}
-\left[\frac{P_{1}}{m_{N}}\left(\hat{\zeta}-\sqrt{\hat{\zeta}^2+1}\right)+\hat{\zeta}\frac{m_{N}}{P_{1}}\right]
-\end{equation*}
-must vanish. This fixes the required Collins-Soper parameter, up to a sign, for a given lattice momentum. Using the lattice ensemble parameters from our lattice size of $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and lattice unit of $a=0.11403\text{ fm}$ (pion mass $m_\pi=317\text{ MeV}$), the nucleon mass and the lowest momentum mode are:
-\begin{align}
-    \mN &= \frac{0.6228(28)}{0.11403\text{ fm}} \nonumber \\
-    &= \frac{0.6228(28)\times 197.32698 \text{ MeV}}{0.11403} \nonumber \\
-    &= 1077.8(48)\text{ MeV} \ , \\
-    P_{1}&=-\frac{2\pi}{L}=-\frac{2\pi}{32\times 0.11403\text{ fm}} \nonumber \\
-    &=-339.8\text{ MeV} \ .
-\end{align}
-Substituting these values into the constraint equation yields:
-\begin{align}
-   \Longrightarrow \left[\frac{P_{1}}{m_{N}}\left(\hat{\zeta}-\sqrt{\hat{\zeta}^2+1}\right)+\hat{\zeta}\frac{m_{N}}{P_{1}}\right]&=0 \nonumber \\
-    \Longrightarrow \hat{\zeta} &=\sqrt{\frac{P_{1}^2}{m_{N}^{2}\left(\frac{m_{N}^{2}}{P_{1}^{2}}+2\right)}} \nonumber \\
-    \hat{\zeta} &= \pm 0.09077(75) \nonumber \\
-    \hat{\zeta} &= \pm 0.090772 \ .
-\end{align}
-With $\hat{\zeta}$ determined, we can derive the specific orientation of the space-like staple vector $v$. From the definition of $\hat{\zeta}$:
-\begin{align}
-    \hat{\zeta}&=\frac{-v_{1}P_{1}}{|v|\mN}=\frac{-v_{1}P_{1}}{\left(\sqrt{v_{1}^{2}+0^{2}+v_{3}^{2}}\right)m_{N}} \ .
-\end{align}
-Solving for the longitudinal staple component $v_1$ in terms of the transverse component $v_3$:
-\begin{align}
-    \Longrightarrow v_{1}=\pm 0.301~v_{3} \ .
-\end{align}
-
-The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_directions}.
-
 \section{Gauge-link paths}
 \label{app:paths}
 \subsection{Staple paths}
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.6\linewidth]{figures/v1_v2_withPath_forP-1_plot.pdf}
         \caption{Ideal continuous trajectory of the off-axis staple vector (solid blue) for $P_1 = -1$. Circular markers indicate target continuous coordinates for sequential values of $\eta$. Dashed lines illustrate the discrete, step-wise permutations of gauge links used to reach the surrounding bounding integer lattice sites.}
         \label{fig:v_path_P-1}
 \end{figure}
 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering
 \begin{ruledtabular}
 \begin{tabular}{ll}
@@ -67,14 +35,14 @@ $10\cdot(0.301,0,1)$ & \parbox[t]{0.72\textwidth}{\raggedright $\{$\mbox{$\{3,3,
 % ---------------------------------------------------------
 % P_1 = -2 Figures
 % ---------------------------------------------------------
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.6\linewidth]{figures/v1_v2_withPath_forP-2_plot.pdf}
         \caption{Ideal continuous trajectory and corresponding discrete bounding paths for the off-axis staple vector at $P_1 = -2$.}
         \label{fig:v_path_P-2}
 \end{figure}
 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering
 \begin{ruledtabular}
 \begin{tabular}{ll}
@@ -101,14 +69,14 @@ $10\cdot(0.531,0,1)$ & \parbox[t]{0.72\textwidth}{\raggedright $\{$\mbox{$\{3,3,
 % ---------------------------------------------------------
 % P_1 = -3 Figures
 % ---------------------------------------------------------
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.6\linewidth]{figures/v1_v2_withPath_forP-3_plot.pdf}
         \caption{Ideal continuous trajectory and corresponding discrete bounding paths for the off-axis staple vector at $P_1 = -3$.}
         \label{fig:v_path_P-3}
 \end{figure}
 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering
 \begin{ruledtabular}
 \begin{tabular}{ll}
@@ -135,14 +103,14 @@ $10\cdot(0.689,0,1)$ & \parbox[t]{0.72\textwidth}{\raggedright $\{$\mbox{$\{3,1,
 % ---------------------------------------------------------
 % P_1 = -4 Figures
 % ---------------------------------------------------------
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.6\linewidth]{figures/v1_v2_withPath_forP-4_plot.pdf}
         \caption{Ideal continuous trajectory and corresponding discrete bounding paths for the off-axis staple vector at $P_1 = -4$.}
         \label{fig:v_path_P-4}
 \end{figure}
 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering
 \begin{ruledtabular}
 \begin{tabular}{ll}
@@ -169,7 +137,7 @@ $10\cdot(0.786,0,1)$ & \parbox[t]{0.72\textwidth}{\raggedright $\{$\mbox{$\{3,1,
 \label{sec:b_gauge_links}
 Constructing the direct Wilson line connecting the quark fields at $0$ and $\vect{b}$ requires generating step-wise paths across the lattice. We categorize these paths into purely transverse separations ($b_1 = 0$) and off-axis separations with a longitudinal component ($b_1 \neq 0$). For purely transverse separations, where $b \cdot P = 0$, the gauge links lie entirely within the transverse plane. Table \ref{tab:b_table_transverse} lists the link sequences used to reach these target coordinates. An empty bracket $\{\}$ denotes the local origin, while arrays such as $\{2,2\}$ indicate a sequence of two consecutive links in the $\hat{x_{2}}$-direction.
 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering\footnotesize
 \begin{ruledtabular}
 \begin{tabular}{llll}
@@ -197,7 +165,7 @@ $\{0,-7,0\}$ & \parbox[t]{0.32\textwidth}{\raggedright $\{$\mbox{$\{-2,-2,-2,-2,
 \end{table*}
 
 To access finite $b \cdot P$, we construct off-axis paths with simultaneous steps in the longitudinal ($\hat{x_{1}}$) and transverse ($\hat{x_{2}}$) directions. To preserve the symmetry required for isolating parity states, every path that reaches a $+b_1$ coordinate has an exact mirror path reaching $-b_1$. Table~\ref{tab:b_table_offaxis} lists these sequences, with each $+b_1$ path next to its mirror $-b_1$ path, obtained by flipping the sign of every $\hat{x_{1}}$ step. Sequences such as $\{2,1\}$ indicate an alternating ``staircase'' step: one unit in the $\hat{x_{2}}$-direction followed by one unit in the $\hat{x_{1}}$-direction. 
-\begin{table*}[htbp]
+\begin{table*}[tb]
     \centering\footnotesize
 \begin{ruledtabular}
 \begin{tabular}{llll}
@@ -240,7 +208,7 @@ $\{8,-2,0\}$ & \parbox[t]{0.32\textwidth}{\raggedright $\{$\mbox{$\{1,1,-2,1,1,1
 
 Several quark separation vectors $\vect{b}$ have a similar path degeneracy as the staple direction vector $\vect{v}$ (see the discussion of off-axis staples in Sec.~\ref{sec:amplitudes_lattice}). We treat it the same way: we average the correlation function over all equivalent step-wise paths that share the same origin and endpoint, as illustrated for a single coordinate in Figure \ref{fig:b_path_example}. 
 
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.3\linewidth]{figures/Example_b_plot_with_2path.pdf}
     \caption{Illustration of path degeneracy for the quark separation vector $\vect{b}$. Distinct step-wise permutations (solid and dashed lines) terminating at the same Cartesian coordinate are averaged to suppress local gauge noise.}
@@ -248,7 +216,7 @@ Several quark separation vectors $\vect{b}$ have a similar path degeneracy as th
 \end{figure}
 Applying this symmetry-improving operation (path-averaging) strategy across the entire target grid yields the full network of smoothed off-axis trajectories, visualized in Figure \ref{fig:b_full_network}.
 
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.4\linewidth]{figures/bL_bT_plot_with_path.pdf}
     \caption{The full network of path-averaged $\vect{b}$ vectors in the $b_1/a - b_2/a$ plane. Solid red lines represent the ideal vectors, while dashed lines illustrate the underlying degenerate staircase paths calculated and averaged on the discrete lattice.}
@@ -256,7 +224,43 @@ Applying this symmetry-improving operation (path-averaging) strategy across the 
 \end{figure}
 
 \begin{widetext}
-\section{Solving for the amplitudes}
+
+\section{Extraction of the amplitudes}
+\label{app:extraction}
+\subsection{Explicit $\hat\zeta$ calculation for $P_1=-1$}
+\label{app:explicit_zeta}
+Setting the right-hand side of Eq. \eqref{constraints} to zero implies that the bracketed term
+\begin{equation*}
+\left[\frac{P_{1}}{m_{N}}\left(\hat{\zeta}-\sqrt{\hat{\zeta}^2+1}\right)+\hat{\zeta}\frac{m_{N}}{P_{1}}\right]
+\end{equation*}
+must vanish. This fixes the required Collins-Soper parameter, up to a sign, for a given lattice momentum. Using the lattice ensemble parameters from our lattice size of $\{\hat{L}^3\times\hat{T}\}=\{32^3\times96\}$ and lattice unit of $a=0.11403\text{ fm}$ (pion mass $m_\pi=317\text{ MeV}$), the nucleon mass and the lowest momentum mode are:
+\begin{align}
+    \mN &= \frac{0.6228(28)}{0.11403\text{ fm}} \nonumber \\
+    &= \frac{0.6228(28)\times 197.32698 \text{ MeV}}{0.11403} \nonumber \\
+    &= 1077.8(48)\text{ MeV} \ , \\
+    P_{1}&=-\frac{2\pi}{L}=-\frac{2\pi}{32\times 0.11403\text{ fm}} \nonumber \\
+    &=-339.8\text{ MeV} \ .
+\end{align}
+Substituting these values into the constraint equation yields:
+\begin{align}
+   \Longrightarrow \left[\frac{P_{1}}{m_{N}}\left(\hat{\zeta}-\sqrt{\hat{\zeta}^2+1}\right)+\hat{\zeta}\frac{m_{N}}{P_{1}}\right]&=0 \nonumber \\
+    \Longrightarrow \hat{\zeta} &=\sqrt{\frac{P_{1}^2}{m_{N}^{2}\left(\frac{m_{N}^{2}}{P_{1}^{2}}+2\right)}} \nonumber \\
+    \hat{\zeta} &= \pm 0.09077(75) \nonumber \\
+    \hat{\zeta} &= \pm 0.090772 \ .
+\end{align}
+With $\hat{\zeta}$ determined, we can derive the specific orientation of the space-like staple vector $v$. From the definition of $\hat{\zeta}$:
+\begin{align}
+    \hat{\zeta}&=\frac{-v_{1}P_{1}}{|v|\mN}=\frac{-v_{1}P_{1}}{\left(\sqrt{v_{1}^{2}+0^{2}+v_{3}^{2}}\right)m_{N}} \ .
+\end{align}
+Solving for the longitudinal staple component $v_1$ in terms of the transverse component $v_3$:
+\begin{align}
+    \Longrightarrow v_{1}=\pm 0.301~v_{3} \ .
+\end{align}
+
+The same calculation for $P_1=-2,-3,-4$ gives the values in Table~\ref{tab:zeta_directions}.
+
+
+\subsection{Solving for the amplitudes}
 \label{app:solve}
 To extract the physical Sivers shift from the lattice, we must isolate the specific invariant amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ from the raw correlator data. We start from the parametrization of the unsubtracted correlator in Eq.~\eqref{eq-phitildedecomp}~\cite{Musch:2011er}. While this parametrization describes a continuous gauge link extending to infinity, we adopt an equivalent representation for lattice calculations in which the structures depend explicitly on the finite staple extent $\eta$. This form remains well defined even in the $v \cdot P = 0$ limit. We obtain it by making the substitution $v \rightarrow \eta v$ and extracting the scaling factors $(v \tcdot P)^{-n}$ as discussed in Appendix~\ref{app:symmetries}:
  \begin{align}
