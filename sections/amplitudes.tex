@@ -33,7 +33,7 @@ For a given lattice momentum, setting the bracket to zero fixes $\hat\zeta$ and 
 
 This geometric calculation is repeated over a range of nucleon momenta to increase $\hat{\zeta}$ systematically. The resulting constraint parameters are summarized in Table \ref{tab:zeta_directions}.
 
-\begin{table}[htbp]
+\begin{table}[tb]
     \centering
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{|c|c|c|}
@@ -53,7 +53,7 @@ This geometric calculation is repeated over a range of nucleon momenta to increa
     \label{tab:zeta_directions}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[tb]
     \centering
     \renewcommand{\arraystretch}{1.3}
     \resizebox{\columnwidth}{!}{\begin{tabular}{|c|c|c|}
@@ -68,7 +68,7 @@ This geometric calculation is repeated over a range of nucleon momenta to increa
 \end{table}
 A consequence of Table \ref{tab:zeta_directions} is that the staple vector $v$ cannot align cleanly with the Cartesian axes of the Euclidean grid. Instead, it must point in an off-axis direction within the $v_1-v_3$ plane. For example, to achieve $v_1 = 0.301~v_3$ at $|P| = 1$, the Wilson line must trace an oblique, step-wise path across the discrete lattice sites (e.g., traversing roughly three lattice spacings in the 1-direction for every ten in the 3-direction). Figure \ref{fig:v_allzetahat} plots the resulting staple directions in the $v_1-v_3$ plane for all four Collins-Soper values in Table \ref{tab:zeta_directions}.
 
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=\linewidth]{figures/v1_v2_allzetahat_plot.pdf}
     \caption{Directions of the spatial staple vectors $\vect{v}$ mapped in the $v_1-v_3$ plane. Each vector corresponds to the requisite geometry to satisfy the $b \cdot P \neq 0$ constraint for the four sequential Collins-Soper parameters $\hat{\zeta}$.}
@@ -91,7 +91,7 @@ By calculating the observable at three or more bounding lattice sites, we genera
 
 A representative example of this interpolation procedure is shown in Figure \ref{fig:interpolation_ex} for a specific staple extent ($\eta=7$) and nucleon momentum ($P_1 = -1$). The red data points represent the path-averaged lattice evaluations at the discrete bounding sites, plotted against their deviation from the ideal trajectory. The solid gray curve denotes the quadratic interpolation, and the blue point highlights the final extracted physical value at $\Delta v_1 = 0$. We apply this procedure to all Dirac structures ($\Gamma$), separately for the real ($b\cdot P$-even) and imaginary ($b\cdot P$-odd) parts of the amplitudes.
 
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=\linewidth,height=0.65\textheight,keepaspectratio]{figures/Interpolation_Ex_b120_eta7_P-1.pdf}
     \caption{Quadratic interpolation of the real and imaginary parts of the correlation function for $\vect{b}=\{1,2,0\}$, $\eta=7$, and $\vect{P}\cdot a\hat{L}/(2\pi)=(-1,0,0)$. Red markers indicate the path-averaged lattice data points as a function of their deviation from the ideal constraint trajectory, $\Delta v_1 = (v_1^{\text{constraint}} - v_1^{\text{lattice}})/a$. The gray curve indicates the quadratic interpolant, and the central blue marker represents the final extracted value at $\Delta v_1 = 0$, lying exactly on the required off-axis spatial trajectory.}
@@ -102,7 +102,7 @@ In addition to the staple vector $\vect{v}$, the correlation function depends on
 
 Because the nucleon momentum in our lattice setup is fixed along the $\hat{x_{1}}$-axis ($P = P_1 \hat{x_{1}}$), the longitudinal separation is directly proportional to the $\hat{x_{1}}$-component of the separation vector: $b \cdot P = -P_1 b_1$. Therefore, to isolate the real and imaginary parts of the amplitudes, we must evaluate the correlator at both positive and negative values of $b_1$. By taking the symmetric (even) and antisymmetric (odd) linear combinations of the correlators evaluated at $+b_1$ and $-b_1$, we project out the real and imaginary amplitudes required for the $x$-dependent Fourier transform. The numerical Fourier transform over $b \cdot P$ requires a wide and dense grid of the separation vector $\vect{b}$. Figures \ref{fig:bL_bT_path}-\ref{fig:bL_bT_standard} show the parameter space of our calculations. The left panel shows the discrete Cartesian grid in the $b_1-b_2$ plane. The right panel shows how this grid maps onto the phenomenologically relevant invariant variable space spanned by $(b \cdot P)\hat{L}/(2\pi)$ and the absolute separation $|b|/a$; the mapping shifts with the target Collins-Soper parameter $\hat{\zeta}$. Here, $\hat{L}$ is the spatial lattice length $\hat{L}=32$, and $a=0.11403\text{ fm}$ is the lattice spacing. 
 
-\begin{figure}[htpb]
+\begin{figure}[tb]
     \centering
     \begin{minipage}{0.35\textwidth}
         \centering
@@ -159,7 +159,7 @@ The amplitude that drives the Sivers shift, $\tAmp_{12B}$, combines the structur
 \end{align}
 Inserting the expressions above for $\tAmp_2$, $\tBmp_1$, $\tAmp_{12}$ and $\tBmp_8$ gives $\tAmp_{2B}$ and $\tAmp_{12B}$ directly in terms of the parity-projected lattice ratios $R_{\Gamma}$ at each grid point $(b_L,b_T,\eta)$.
 
-Figures~\ref{fig:BLBT_3D_P1}--\ref{fig:BLBT_eta8_P2} show the extracted amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ as functions of $b_L/a$ at $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ ($\hat\zeta=0.090772$) and $\{-2,0,0\}$ ($\hat\zeta=0.294367$), with a different color for each value of $b_T/a$. Figs.~\ref{fig:BLBT_3D_P1} and~\ref{fig:BLBT_3D_P2} show the full range of $\eta$ and Figs.~\ref{fig:BLBT_eta8_P1} and~\ref{fig:BLBT_eta8_P2} the slice at fixed $\eta|\vect{v}|/a=8$. The same figures with both panels at all four momenta, including the panels with $b_T$ as the horizontal axis and $b_L$ as the color label, are in Appendix~\ref{app:amps_blbt}.
+Figures~\ref{fig:BLBT_3D_P1}--\ref{fig:BLBT_eta8_P2} show the extracted amplitudes $\tAmp_{2B}$ and $\tAmp_{12B}$ as functions of $b_L/a$ at $\vect{P}\cdot a\hat{L}/(2\pi)=\{-1,0,0\}$ ($\hat\zeta=0.090772$) and $\{-2,0,0\}$ ($\hat\zeta=0.294367$), with a different color for each value of $b_T/a$. Figs.~\ref{fig:BLBT_3D_P1} and~\ref{fig:BLBT_3D_P2} show the full range of $\eta$ and Figs.~\ref{fig:BLBT_eta8_P1} and~\ref{fig:BLBT_eta8_P2} the slice at fixed $\eta|\vect{v}|/a=8$. The same figures at $\{-3,0,0\}$ and $\{-4,0,0\}$ are in Appendix~\ref{app:amps_blbt}.
 
 Before examining the lattice data across the different Collins-Soper scales ($\hat{\zeta}$), we check the parity constraints of Eq.~\eqref{eq-ReIm-parity}. Since $P\cdot b=-P_Lb_L$ (Eq.~\eqref{eq:pb_minus_pl_bl}), the real amplitudes $\tAmp_{2B}^{\text{Re}}$ and $\tAmp_{12B}^{\text{Re}}$ must be even in the Cartesian longitudinal separation $b_L$, and the imaginary amplitudes $\tAmp_{2B}^{\text{Im}}$ and $\tAmp_{12B}^{\text{Im}}$ must be odd. The lattice data in Figs.~\ref{fig:BLBT_3D_P1}--\ref{fig:BLBT_eta8_P2} show these even and odd profiles along the $b_L$ axis. % TODO(Hari): the profiles follow from the projection by construction; add the size of the opposite-parity part as an actual check
 
@@ -174,4 +174,4 @@ The prefactors in the $\tAmp_{12}$ and $\tBmp_8$ expressions depend only on $b_T
 \begin{equation}
     \tAmp_{iB}(b_L, b_T, \hat{\zeta}) \to \tAmp_{iB}\left( P \cdot b, \bvec^2, \hat{\zeta} \right)\,.
 \end{equation}
-The amplitudes in the $((\vect{P}\cdot\vect{b})\hat{L}/(2\pi),b^2/a^2)$ space are shown at all four momenta in Appendix~\ref{app:amps_pbb}. With the amplitudes expressed as functions of $P\cdot b$, the Fourier transform of Eq.~\eqref{eq:sivers_shift_xdep} can be evaluated directly. This connects the Euclidean correlation ratios evaluated on the lattice to the physical, $x$-dependent phenomenological observables needed to study the Sivers effect.
+With the amplitudes expressed as functions of $P\cdot b$, the Fourier transform of Eq.~\eqref{eq:sivers_shift_xdep} can be evaluated directly. This connects the Euclidean correlation ratios evaluated on the lattice to the physical, $x$-dependent phenomenological observables needed to study the Sivers effect.
